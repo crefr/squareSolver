@@ -1,3 +1,5 @@
+//! @file
+
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -8,23 +10,26 @@ const double EPSILON = 0.00001;
 
 void sqSolve(struct coeffs_t coef, struct roots_t *root);
 int isZero(const double a);
-void scanCoefs(struct coeffs_t *coeffs);
+int scanCoefs(struct coeffs_t *coeffs);
 void printRoots(struct roots_t root);
 double discr(struct coeffs_t coef);
 int linSolve(double b, double c, double *x);
 
+
+//! @brief  Структура, содержащая 3 коэффициента квадратного уравнения (a, b, c)
 struct coeffs_t
 {
-    double a = 0;
-    double b = 0;
-    double c = 0;
+    double a = 0; ///< коэффициент a
+    double b = 0; ///< коэффициент b
+    double c = 0; ///< коэффициент c
 };
 
+//! @brief  Структура, 2 переменные для корней квадратного уравнения и nRoots, содержащая количество корней
 struct roots_t
 {
-    double x1 = 0;
-    double x2 = 0;
-    int nRoots = -2;
+    double x1 = 0;      ///< первый корень
+    double x2 = 0;      ///< второй корень
+    int nRoots = -2;    ///< количество корней
 };
 
 int main()
@@ -35,15 +40,23 @@ int main()
     printf("# SquareSolver\n"
            "# Made for Summer school MIPT\n");
 
-    printf("Enter a, b, c coefficients:\n");
+    printf("Enter a, b, c coefficients (only one number in each line): \n");
 
-    scanCoefs(&sq);
+    if (scanCoefs(&sq) == 0)
+        return 1;
 
     sqSolve(sq, &root);
     printRoots(root);
 
     return 0;
 }
+
+//! @brief Решает квадратное уравнение вида ax^2 + bx + c = 0.
+//! Коэффициенты берет из структуры coeffs_t, корни пишет в структуру roots_t
+//!
+//! @param      [IN]    coef    структура с коэффициентами
+//! @param      [OUT]   root    указатель на структуру с корнями
+
 
 void sqSolve(struct coeffs_t coef, struct roots_t *root)
 {
@@ -78,21 +91,42 @@ void sqSolve(struct coeffs_t coef, struct roots_t *root)
     root -> nRoots = 0;
 }
 
+
+//! @brief Приближенно сравнивает a с 0. Погрешность определяется константой EPSILON
+//!
+//! @param      [IN]    a   сравниваемое число
+//! @return     1, если число сравнимо с нулем, 0 - если нет
+
 int isZero(const double a)
 {
     assert(isfinite(a));
     return fabs(a) < EPSILON;
 }
 
-void scanCoefs(struct coeffs_t *sq)
+//! @brief Записывает вводимые коэффициенты в структуру coeffs_t, в случае неправильного ввода возвращает 0
+//!
+//! @param      [OUT]   sq      указатель на структуру, в которую запишутся коэффициенты
+//! @return Возвращает 1, если все хорошо, 0 - в обратном случае
+
+int scanCoefs(struct coeffs_t *sq)
 {
     assert(sq != NULL);
-    while(scanf("%lg %lg %lg", &(sq -> a), &(sq -> b), &(sq -> c)) != 3)  {
+    double *ptrs[] = {&(sq -> a), &(sq -> b), &(sq -> c)};  // массив указателей для for
+    for (int i = 0; i <= 2; i++){
+        scanf("%lg", ptrs[i]);
         int ch = EOF;
-        while ((ch = getchar()) != '\n' && ch != EOF);
-        printf("Try again\n");
+        if ((ch = getchar()) != '\n' && ch != EOF)
+        {
+            printf("!!!input ERROR!!!");
+            return 0;
+        }
     }
+    return 1;
 }
+
+//! @brief Печатает корни из структуры roots_t
+//!
+//! @param      [IN]    root    структура с корнями типа roots_t
 
 void printRoots(struct roots_t root){
     switch(root.nRoots)
@@ -119,6 +153,13 @@ void printRoots(struct roots_t root){
     }
 }
 
+//! @brief Решает линейное уравнение вида bx + c = 0
+//!
+//! @param      [IN]    b   коэффициент b
+//! @param      [IN]    c   коэффициент c
+//! @param      [OUT]   x   указатель на корень
+//! @return     Возвращает количество корней (1, 0 или INF_ROOTS)
+
 int linSolve(double b, double c, double *x)
 {
     assert(x != NULL);
@@ -134,6 +175,11 @@ int linSolve(double b, double c, double *x)
     *x = -c/b;
     return 1;
 }
+
+//! @brief Считает дискриминант, используя коэффициенты из структуры типа coeffs_t
+//!
+//! @param      [IN]    coef    структура с коэффициентами
+//! @return     Возвращает значение дискриминанта
 
 double discr(struct coeffs_t coef)
 {
