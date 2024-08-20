@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <assert.h>
 
-
 const int INF_ROOTS = -1;
 const double EPSILON = 0.00001;
 
@@ -18,11 +17,12 @@ int main()
 
     double a = 0, b = 0, c = 0;
     while(scanf("%lg %lg %lg", &a, &b, &c) != 3)  {
-        while (getchar() != '\n');
+        int ch;
+        while ((ch = getchar()) != '\n' && ch != EOF);
         printf("Try again\n");
     }
 
-    double x1 = 0, x2 = 0;   // kill! // kill!
+    double x1 = 0, x2 = 0;
     int nRoots = sqSolve(a, b, c, &x1, &x2);
 
     switch(nRoots)
@@ -45,10 +45,23 @@ int main()
 
         default:
             printf("ERROR nRoots = %d\n", nRoots);
+            return 1;
             break;
     }
     return 0;
 }
+
+
+//! @brief sqSolve - function that solves square equations and returns real roots
+//!
+//! @param   [in]     a     coefficient a
+//! @param   [in]     b     coefficient b
+//! @param   [in]     c     coefficient c
+//! @param   [out]    x1    pointer to first root
+//! @param   [out]    x2    pointer to second root
+//!
+//! @return number of real roots for the equation
+//! @note In case of infinite roots returns INF_ROOTS
 
 int sqSolve(double a, double b, double c, double *x1, double *x2)
 {
