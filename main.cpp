@@ -4,10 +4,15 @@
 #include <math.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <string.h>
 //#include "TXLib.h"
 
 const int INF_ROOTS = -1;
 const double EPSILON = 0.00001;
+
+
+const int ERROR_ = -10;
+enum argvs {MODE_0, MODE_1, HELP};
 
 void sqSolve(struct coeffs_t coef, struct roots_t *root);
 int isZero(const double a);
@@ -19,6 +24,7 @@ int runTest(struct test_t test);
 int equals(double a, double b);
 int runTests(struct test_t tests[], int len);
 bool eqRoots(roots_t root1, roots_t root2);
+int argvReceive(int argc, char **argv);
 
 
 //! @brief  Структура, содержащая 3 коэффициента квадратного уравнения (a, b, c)
@@ -53,11 +59,36 @@ struct test_t
 
 int main(int argc, char *argv[])
 {
-    if (!runTests(tests, TESTNUM))
+    int modes = argvReceive(argc, argv);
+
+    switch(modes)
     {
-        printf("TESTING FAILED\n");
-        return 2;
+        case ERROR_:
+            printf("incorrect argvs, use --help\n");
+            return ERROR_;
+
+        case HELP:
+            printf("#######################################################\n");
+            printf("-m    \tswitches mode to 0 or 1 (-m 0 and -m 1)\n"
+                   "--help\tstandard --help\n");
+            printf("#######################################################\n");
+            return 0;
+
+        case MODE_1:
+            if (!runTests(tests, TESTNUM))
+            {
+                printf("TESTING FAILED\n");
+                return ERROR_;
+            }
+            return 0;
+        case MODE_0:
+            break;
+
+        default:
+            printf("ERROR in argvReceive()");
+            return ERROR_;
     }
+
     struct coeffs_t sq;
     struct roots_t root;
 
@@ -142,7 +173,7 @@ int scanCoefs(struct coeffs_t *sq)
 {
     assert(sq != NULL);
     double *ptrs[] = {&(sq -> a), &(sq -> b), &(sq -> c)};  // массив указателей для for
-    for (int i = 0; i < sizeof(ptrs) / sizeof(double *); i++){
+    for (unsigned int i = 0; i < sizeof(ptrs) / sizeof(double *); i++){
         scanf("%lg", ptrs[i]);
         int ch = EOF;
         if ((ch = getchar()) != '\n' && ch != EOF)
@@ -257,9 +288,30 @@ int runTests(struct test_t test[], int len)
 
 bool eqRoots(roots_t root1, roots_t root2)
 {
-    if(root1.x1 == root2.x1 && root1.x2 == root2.x2)
+    if(equals(root1.x1, root2.x1) && equals(root1.x2, root2.x2))
         return 1;
-    if(root1.x1 == root2.x2 && root1.x2 == root2.x1)
+    if(equals(root1.x1, root2.x2) && equals(root1.x2, root2.x1))
         return 1;
     return 0;
+}
+
+int argvReceive(int argc, char **argv)
+{
+    if (argc != 1)
+    {
+        if (argc == 2 && strcmp(argv[1], "--help") == 0)
+            return HELP;
+        else if (argc == 3 && strcmp(argv[1], "-m") == 0)
+        {
+            if (strcmp(argv[2], "0") == 0)
+                return MODE_0;
+            else if (strcmp(argv[2], "1") == 0)
+                return MODE_1;
+            else
+                return ERROR_;
+        }
+        else
+            return ERROR_;
+    }
+    return MODE_0;
 }
