@@ -6,10 +6,10 @@
 #include <assert.h>
 #include <string.h>
 //#include "TXLib.h"
+#include <ctype.h>
 
 const int INF_ROOTS = -1;
 const double EPSILON = 0.00001;
-
 
 const int ERROR_ = -10;
 enum argvs {MODE_0, MODE_1, HELP};
@@ -25,7 +25,6 @@ int equals(double a, double b);
 int runTests(struct test_t tests[], int len);
 bool eqRoots(roots_t root1, roots_t root2);
 int argvReceive(int argc, char **argv);
-
 
 //! @brief  Структура, содержащая 3 коэффициента квадратного уравнения (a, b, c)
 struct coeffs_t
@@ -98,7 +97,10 @@ int main(int argc, char *argv[])
     printf("Enter a, b, c coefficients (only one number in each line): \n");
 
     if (scanCoefs(&sq) == 0)
-        return 1;
+    {
+        printf("!!!INPUT ERROR!!!");
+        return ERROR_;
+    }
 
     sqSolve(sq, &root);
     printRoots(root);
@@ -172,16 +174,48 @@ int isZero(const double a)
 int scanCoefs(struct coeffs_t *sq)
 {
     assert(sq != NULL);
-    double *ptrs[] = {&(sq -> a), &(sq -> b), &(sq -> c)};  // массив указателей для for
-    for (unsigned int i = 0; i < sizeof(ptrs) / sizeof(double *); i++){
-        scanf("%lg", ptrs[i]);
-        int ch = EOF;
-        if ((ch = getchar()) != '\n' && ch != EOF)
-        {
-            printf("!!!input ERROR!!!");
-            return 0;
+    double *ptrs[] = {&(sq -> a), &(sq -> b), &(sq -> c)};  // б≤б≤б≤б≤б≤б≤ б≤б≤б≤б≤б≤б≤б≤б≤б≤б≤ б≤б≤б≤ for
+    int ch = EOF;
+
+    bool flag = false;
+    do
+    {
+        flag = false;
+        int count = 0;
+        for (unsigned int i = 0; i < sizeof(ptrs) / sizeof(double *); i++){
+            count += scanf("%lg", ptrs[i]);
+            if (!isspace(ch = getchar()) && ch != EOF)
+            {
+                flag = true;
+                while((ch = getchar()) != '\n' && ch != EOF);
+                break;
+            }
         }
-    }
+
+        if (count != 3)
+            flag = true;
+
+        while(ch != '\n' && ch != EOF && !flag)
+        {
+            if (!isspace(ch))
+            {
+                flag = true;
+                while((ch = getchar()) != '\n' && ch != EOF);
+                break;
+            }
+            ch = getchar();
+        }
+
+        if (flag)
+        {
+            if (ch == EOF)
+                return 0;
+            else
+                printf("Try again\n");
+        }
+
+    } while(flag);
+
     return 1;
 }
 
@@ -237,6 +271,7 @@ int linSolve(const double b, const double c, double *x)
     return 1;
 }
 
+
 //! @brief Считает дискриминант, используя коэффициенты из структуры типа coeffs_t
 //!
 //! @param      [IN]    coef    структура с коэффициентами
@@ -264,14 +299,27 @@ int runTest(struct test_t test)
     sqSolve(test.coef, &root);
     if (!equals(test.root.nRoots, root.nRoots) || !eqRoots(test.root, root))
     {
+        #ifdef _TX_MODULE
+            txSetConsoleAttr(4) meow
+        #endif
         printf("Error Test %d:\na = %lg, b = %lg, c = %lg\n"
                "x1 = %lg, x2 = %lg, nRoots = %d\n"
                "Expected:\nx1 = %lg, x2 = %lg, nRoots = %d\n",
                test.num, test.coef.a, test.coef.b, test.coef.c, root.x1, root.x2, root.nRoots,
                test.root.x1, test.root.x2, test.root.nRoots);
+        #ifdef _TX_MODULE
+            txSetConsoleAttr(7) meow
+        #endif
         return 0;
     }
+    #ifdef _TX_MODULE
+        txSetConsoleAttr(2) meow
+    #endif
     printf("Test %d Correct\n", test.num);
+
+    #ifdef _TX_MODULE
+        txSetConsoleAttr(7) meow
+    #endif
     return 1;
 }
 
@@ -297,6 +345,8 @@ bool eqRoots(roots_t root1, roots_t root2)
 
 int argvReceive(int argc, char **argv)
 {
+    assert(argv!=NULL);
+    assert(*argv != NULL);
     if (argc != 1)
     {
         if (argc == 2 && strcmp(argv[1], "--help") == 0)
