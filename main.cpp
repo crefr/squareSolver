@@ -4,6 +4,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <assert.h>
+//#include "TXLib.h"
 
 const int INF_ROOTS = -1;
 const double EPSILON = 0.00001;
@@ -14,26 +15,49 @@ int scanCoefs(struct coeffs_t *coeffs);
 void printRoots(struct roots_t root);
 double discr(struct coeffs_t coef);
 int linSolve(double b, double c, double *x);
+int runTest(struct test_t test);
+int equals(double a, double b);
+int runTests(struct test_t tests[], int len);
+bool eqRoots(roots_t root1, roots_t root2);
 
 
 //! @brief  Структура, содержащая 3 коэффициента квадратного уравнения (a, b, c)
 struct coeffs_t
 {
-    double a = 0; ///< коэффициент a
-    double b = 0; ///< коэффициент b
-    double c = 0; ///< коэффициент c
+    double a; ///< коэффициент a
+    double b; ///< коэффициент b
+    double c; ///< коэффициент c
 };
 
 //! @brief  Структура, 2 переменные для корней квадратного уравнения и nRoots, содержащая количество корней
 struct roots_t
 {
-    double x1 = 0;      ///< первый корень
-    double x2 = 0;      ///< второй корень
-    int nRoots = -2;    ///< количество корней
+    double x1;      ///< первый корень
+    double x2;      ///< второй корень
+    int nRoots;     ///< количество корней
 };
 
-int main()
+struct test_t
 {
+    int num;
+    coeffs_t coef;
+    roots_t root;
+};
+
+#include "tests.h"
+
+#ifndef TESTS_H_INCLUDED
+    struct test_t tests[0];
+    const int TESTNUM = 0;
+#endif
+
+int main(int argc, char *argv[])
+{
+    if (!runTests(tests, TESTNUM))
+    {
+        printf("TESTING FAILED\n");
+        return 2;
+    }
     struct coeffs_t sq;
     struct roots_t root;
 
@@ -66,9 +90,14 @@ void sqSolve(struct coeffs_t coef, struct roots_t *root)
     assert(isfinite(coef.b));
     assert(isfinite(coef.c));
 
+    root -> x1 = 0;
+    root -> x2 = 0;
+    root -> nRoots = -2;
+
     if (isZero(coef.a))
     {
         root -> nRoots = linSolve(coef.b, coef.c, &(root -> x1));
+        root -> x2 =0;
         return;
     }
 
@@ -76,6 +105,7 @@ void sqSolve(struct coeffs_t coef, struct roots_t *root)
     if (isZero(D))
     {
         root -> x1 = -coef.b/(2*coef.a);
+        root -> x2 = 0;
         root -> nRoots =  1;
         return;
     }
@@ -112,7 +142,7 @@ int scanCoefs(struct coeffs_t *sq)
 {
     assert(sq != NULL);
     double *ptrs[] = {&(sq -> a), &(sq -> b), &(sq -> c)};  // массив указателей для for
-    for (int i = 0; i <= 2; i++){
+    for (int i = 0; i < sizeof(ptrs) / sizeof(double *); i++){
         scanf("%lg", ptrs[i]);
         int ch = EOF;
         if ((ch = getchar()) != '\n' && ch != EOF)
@@ -160,7 +190,7 @@ void printRoots(struct roots_t root){
 //! @param      [OUT]   x   указатель на корень
 //! @return     Возвращает количество корней (1, 0 или INF_ROOTS)
 
-int linSolve(double b, double c, double *x)
+int linSolve(const double b, const double c, double *x)
 {
     assert(x != NULL);
     assert(isfinite(b));
@@ -188,4 +218,48 @@ double discr(struct coeffs_t coef)
     assert(isfinite(coef.c));
 
     return coef.b*coef.b - 4*coef.a*coef.c;
+}
+
+int equals(const double a, const double b)
+{
+    assert(isfinite(a));
+    assert(isfinite(b));
+    return (fabs(a - b) < EPSILON) ? 1: 0;
+}
+
+int runTest(struct test_t test)
+{
+    struct roots_t root;
+    sqSolve(test.coef, &root);
+    if (!equals(test.root.nRoots, root.nRoots) || !eqRoots(test.root, root))
+    {
+        printf("Error Test %d:\na = %lg, b = %lg, c = %lg\n"
+               "x1 = %lg, x2 = %lg, nRoots = %d\n"
+               "Expected:\nx1 = %lg, x2 = %lg, nRoots = %d\n",
+               test.num, test.coef.a, test.coef.b, test.coef.c, root.x1, root.x2, root.nRoots,
+               test.root.x1, test.root.x2, test.root.nRoots);
+        return 0;
+    }
+    printf("Test %d Correct\n", test.num);
+    return 1;
+}
+
+int runTests(struct test_t test[], int len)
+{
+    assert(test != NULL);
+    for (int i = 0; i < len; i++)
+    {
+        if (runTest(test[i]) == 0)
+            return 0;
+    }
+    return 1;
+}
+
+bool eqRoots(roots_t root1, roots_t root2)
+{
+    if(root1.x1 == root2.x1 && root1.x2 == root2.x2)
+        return 1;
+    if(root1.x1 == root2.x2 && root1.x2 == root2.x1)
+        return 1;
+    return 0;
 }
