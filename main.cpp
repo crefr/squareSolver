@@ -8,23 +8,7 @@
 //#include "TXLib.h"
 #include <ctype.h>
 
-const int INF_ROOTS = -1;
-const double EPSILON = 0.00001;
-
-const int ERROR_ = -10;
-enum argvs {MODE_0, MODE_1, HELP};
-
-void sqSolve(struct coeffs_t coef, struct roots_t *root);
-int isZero(const double a);
-int scanCoefs(struct coeffs_t *coeffs);
-void printRoots(struct roots_t root);
-double discr(struct coeffs_t coef);
-int linSolve(double b, double c, double *x);
-int runTest(struct test_t test);
-int equals(double a, double b);
-int runTests(struct test_t tests[], int len);
-bool eqRoots(roots_t root1, roots_t root2);
-int argvReceive(int argc, char **argv);
+#include "colors.h"
 
 //! @brief  Структура, содержащая 3 коэффициента квадратного уравнения (a, b, c)
 struct coeffs_t
@@ -49,6 +33,33 @@ struct test_t
     roots_t root;
 };
 
+struct flags_t
+{
+    unsigned int m : 1;
+    unsigned int h : 1;
+    unsigned int c : 1;
+};
+
+struct flags_t modes = {0, 0, 1};
+
+const int INF_ROOTS = -1;
+const double EPSILON = 0.00001;
+
+const int ERROR_ = -10;
+enum EXITS {BAD, GOOD};
+
+void sqSolve(struct coeffs_t coef, struct roots_t *root);
+int isZero(const double a);
+int scanCoefs(struct coeffs_t *coeffs);
+void printRoots(struct roots_t root);
+double discr(struct coeffs_t coef);
+int linSolve(double b, double c, double *x);
+int runTest(struct test_t test);
+int equals(double a, double b);
+int runTests(struct test_t tests[], int len);
+bool eqRoots(roots_t root1, roots_t root2);
+int argvReceive(int argc, char **argv);
+
 #include "tests.h"
 
 #ifndef TESTS_H_INCLUDED
@@ -58,36 +69,31 @@ struct test_t
 
 int main(int argc, char *argv[])
 {
-    int modes = argvReceive(argc, argv);
-
-    switch(modes)
+    if (argvReceive(argc, argv) == BAD)
     {
-        case ERROR_:
-            printf("incorrect argvs, use --help\n");
-            return ERROR_;
-
-        case HELP:
-            printf("#######################################################\n");
-            printf("-m    \tswitches mode to 0 or 1 (-m 0 and -m 1)\n"
-                   "--help\tstandard --help\n");
-            printf("#######################################################\n");
-            return 0;
-
-        case MODE_1:
-            if (!runTests(tests, TESTNUM))
-            {
-                printf("TESTING FAILED\n");
-                return ERROR_;
-            }
-            return 0;
-        case MODE_0:
-            break;
-
-        default:
-            printf("ERROR in argvReceive()");
-            return ERROR_;
+        printf("CMD args ERROR\n");
+        return ERROR_;
     }
 
+    if (modes.h == 1)
+    {
+        printf("#######################################################\n");
+        printf("-m        \tswitches mode to 0 or 1 (-m 0 and -m 1)\n"
+               "--help, -h\tstandard --help\n"
+               "-c        \tswitches color mode to 0 or 1 (-c 0 and -c 1)\n");
+        printf("#######################################################\n");
+        return 0;
+    }
+
+    if (modes.m == 1)
+    {
+        if (!runTests(tests, TESTNUM))
+        {
+            printf("TESTING FAILED\n");
+            return ERROR_;
+        }
+        return 0;
+    }
     struct coeffs_t sq;
     struct roots_t root;
 
@@ -98,7 +104,7 @@ int main(int argc, char *argv[])
 
     if (scanCoefs(&sq) == 0)
     {
-        printf("!!!INPUT ERROR!!!");
+        printf((modes.c) ? RED "!!!INPUT ERROR!!!" : "!!!INPUT ERROR!!!");
         return ERROR_;
     }
 
@@ -227,23 +233,23 @@ void printRoots(struct roots_t root){
     switch(root.nRoots)
     {
         case 0:
-            printf("No real roots");
+            printf((modes.c) ? RED "No real roots" RESET_C : "No real roots");
             break;
 
         case 1:
-            printf("x = %lg\n", root.x1);
+            printf((modes.c) ? GREEN "x = %lg\n" RESET_C : "x = %lg\n", root.x1);
             break;
 
         case 2:
-            printf("x1 = %lg\nx2 = %lg\n", root.x1, root.x2);
+            printf((modes.c) ? GREEN "x1 = %lg\nx2 = %lg\n" RESET_C : "x1 = %lg\nx2 = %lg\n", root.x1, root.x2);
             break;
 
         case INF_ROOTS:
-            printf("Infinite roots\n");
+            printf((modes.c) ? GREEN "Infinite roots\n" RESET_C : "Infinite roots\n");
             break;
 
         default:
-            printf("ERROR nRoots = %d\n", root.nRoots);
+            printf((modes.c) ? GREEN "ERROR nRoots = %d\n" RESET_C : "Infinite roots\n" , root.nRoots);
             break;
     }
 }
@@ -302,7 +308,10 @@ int runTest(struct test_t test)
         #ifdef _TX_MODULE
             txSetConsoleAttr(4) meow
         #endif
-        printf("Error Test %d:\na = %lg, b = %lg, c = %lg\n"
+        printf((modes.c) ? RED "Error Test %d:\na = %lg, b = %lg, c = %lg\n"
+               "x1 = %lg, x2 = %lg, nRoots = %d\n"
+               "Expected:\nx1 = %lg, x2 = %lg, nRoots = %d\n" RESET_C
+               : "Error Test %d:\na = %lg, b = %lg, c = %lg\n"
                "x1 = %lg, x2 = %lg, nRoots = %d\n"
                "Expected:\nx1 = %lg, x2 = %lg, nRoots = %d\n",
                test.num, test.coef.a, test.coef.b, test.coef.c, root.x1, root.x2, root.nRoots,
@@ -315,7 +324,7 @@ int runTest(struct test_t test)
     #ifdef _TX_MODULE
         txSetConsoleAttr(2) meow
     #endif
-    printf("Test %d Correct\n", test.num);
+    printf((modes.c) ? GREEN "Test %d Correct\n" RESET_C : "Test %d Correct\n", test.num);
 
     #ifdef _TX_MODULE
         txSetConsoleAttr(7) meow
@@ -342,26 +351,57 @@ bool eqRoots(roots_t root1, roots_t root2)
         return 1;
     return 0;
 }
-
 int argvReceive(int argc, char **argv)
 {
     assert(argv!=NULL);
-    assert(*argv != NULL);
-    if (argc != 1)
+
+    enum conf_state {READY, VAL};
+    int mconf = VAL;
+    int cconf = VAL;
+
+    for(int i = 1; i < argc; i++)
     {
-        if (argc == 2 && strcmp(argv[1], "--help") == 0)
-            return HELP;
-        else if (argc == 3 && strcmp(argv[1], "-m") == 0)
+        if (argc == 2 && (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0))
         {
-            if (strcmp(argv[2], "0") == 0)
-                return MODE_0;
-            else if (strcmp(argv[2], "1") == 0)
-                return MODE_1;
+            modes.h = 1;
+            return GOOD;
+        }
+        else if (strcmp("-m", argv[i]) == 0 && mconf == VAL && cconf == VAL)
+            mconf = READY;
+        else if (strcmp("-c", argv[i]) == 0 && mconf == VAL && cconf == VAL)
+            cconf = READY;
+
+        else if (mconf == READY)
+        {
+            mconf = VAL;
+            if (strcmp("0", argv[i]) == 0)
+                modes.m = 0;
+            else if (strcmp("1", argv[i]) == 0)
+                modes.m = 1;
             else
-                return ERROR_;
+                return BAD;
+        }
+
+        else if (cconf == READY)
+        {
+            cconf = VAL;
+            if (strcmp("0", argv[i]) == 0)
+                modes.c = 0;
+            else if (strcmp("1", argv[i]) == 0)
+                modes.c = 1;
+            else
+                return BAD;
         }
         else
-            return ERROR_;
+            return BAD;
     }
-    return MODE_0;
+
+    if (mconf == READY || cconf == READY)
+        return BAD;
+    return GOOD;
 }
+
+/*
+структуры для командной строки
+цветной printf
+*/
