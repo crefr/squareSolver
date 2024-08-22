@@ -81,6 +81,7 @@ int runTests(struct test_t tests[], int len);
 bool eqRoots(roots_t root1, roots_t root2);
 int argvReceive(int argc, char **argv);
 void colPrintf(const char *color, const char *format, ...);
+void colPrintf_old(const char *color, const char *format, ...);
 
 #include "tests.h"
 
@@ -257,27 +258,22 @@ void printRoots(struct roots_t root){
     {
         case 0:
             colPrintf(RED, "No real roots");
-            //printf((args[C].fval) ? RED "No real roots" RESET_C : "No real roots");
             break;
 
         case 1:
             colPrintf(GREEN, "x = %lg\n", root.x1);
-            //printf((args[C].fval) ? GREEN "x = %lg\n" RESET_C : "x = %lg\n", root.x1);
             break;
 
         case 2:
             colPrintf(GREEN, "x1 = %lg\nx2 = %lg\n", root.x1, root.x2);
-            //printf((args[C].fval) ? GREEN "x1 = %lg\nx2 = %lg\n" RESET_C : "x1 = %lg\nx2 = %lg\n", root.x1, root.x2);
             break;
 
         case INF_ROOTS:
             colPrintf(GREEN, "Infinite roots\n");
-            //printf((args[C].fval) ? GREEN "Infinite roots\n" RESET_C : "Infinite roots\n");
             break;
 
         default:
             colPrintf(GREEN, "ERROR nRoots = %d\n", root.nRoots);
-            //printf((args[C].fval) ? GREEN "ERROR nRoots = %d\n" RESET_C : "Infinite roots\n" , root.nRoots);
             break;
     }
 }
@@ -342,14 +338,6 @@ int runTest(struct test_t test)
                        "Expected:\nx1 = %lg, x2 = %lg, nRoots = %d\n",
                         test.num, test.coef.a, test.coef.b, test.coef.c, root.x1, root.x2, root.nRoots,
                         test.root.x1, test.root.x2, test.root.nRoots);
-        // printf((args[C].fval) ? RED "Error Test %d:\na = %lg, b = %lg, c = %lg\n"
-        //        "x1 = %lg, x2 = %lg, nRoots = %d\n"
-        //        "Expected:\nx1 = %lg, x2 = %lg, nRoots = %d\n" RESET_C
-        //        : "Error Test %d:\na = %lg, b = %lg, c = %lg\n"
-        //        "x1 = %lg, x2 = %lg, nRoots = %d\n"
-        //        "Expected:\nx1 = %lg, x2 = %lg, nRoots = %d\n",
-        //        test.num, test.coef.a, test.coef.b, test.coef.c, root.x1, root.x2, root.nRoots,
-        //        test.root.x1, test.root.x2, test.root.nRoots);
         #ifdef _TX_MODULE
             txSetConsoleAttr(7) meow
         #endif
@@ -360,8 +348,6 @@ int runTest(struct test_t test)
     #endif
 
     colPrintf(GREEN, "Test %d Correct\n", test.num);
-    //printf((args[C].fval) ? GREEN "Test %d Correct\n" RESET_C : "Test %d Correct\n", test.num);
-
     #ifdef _TX_MODULE
         txSetConsoleAttr(7) meow
     #endif
@@ -418,7 +404,7 @@ int argvReceive(int argc, char **argv)
     return GOOD;
 }
 
-void colPrintf(const char *color, const char *format, ...)
+void colPrintf_old(const char *color, const char *format, ...)
 {
     if (args[C].fval == 1)
         printf("%s", color);
@@ -463,7 +449,20 @@ void colPrintf(const char *color, const char *format, ...)
     printf(RESET_C);
 }
 
+void colPrintf(const char *color, const char *format, ...)
+{
+    if (args[C].fval == 1)
+        printf("%s", color);
+    va_list ap;
+    va_start(ap, format);
+    vprintf(format, ap);
+    va_end(ap);
+    printf(RESET_C);
+}
+
 /*
-структуры для командной строки +
-цветной printf +
+добавить в структуру argsvEx_t поле с описанием тега для --help
+переделать colPrintf (сделать с флагом c) в аргументах
+переделать argvReceive
+раздельная компиляция (хотя бы в раздельных файлах)
 */
