@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdarg.h>
+
 #include "colors.h"
+#include "colPrintf.h"
 
 static unsigned int colfl = 0;
 
