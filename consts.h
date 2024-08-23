@@ -14,6 +14,7 @@ struct argvEx_t
     unsigned int haveVal : 1;
     char fname[MAXLINE];
     unsigned int fval : 1;
+    const char *help;
 
 };
 
