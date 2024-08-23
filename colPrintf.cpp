@@ -3,6 +3,7 @@
 
 #include "colors.h"
 #include "colPrintf.h"
+#include "myassert.h"
 
 static unsigned int colfl = 0;
 
@@ -13,6 +14,7 @@ void setColFlag(unsigned int colF)
 
 void colPrintf_old(const char *color, const char *format, ...)
 {
+    MYASSERT(color != NULL && format != NULL);
     if (colfl)
         printf("%s", color);
     va_list ap;
@@ -58,6 +60,7 @@ void colPrintf_old(const char *color, const char *format, ...)
 
 void colPrintf(const char *color, const char *format, ...)
 {
+    MYASSERT(color != NULL && format != NULL);
     if (colfl)
         printf("%s", color);
     va_list ap;

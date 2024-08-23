@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include <assert.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdarg.h>
@@ -14,6 +13,7 @@
 #include "consts.h"
 #include "tests.h"
 #include "colPrintf.h"
+#include "myassert.h"
 
 int argvReceive(int argc, char **argv, const struct argvEx_t *argvs, unsigned int *fval, const int argvnum);
 int argvHandler(unsigned int *fval);
@@ -30,9 +30,9 @@ static const int ARGVNUM = sizeof(args) / sizeof(argvEx_t);
 
 int main(int argc, char *argv[])
 {
+    MYASSERT(argv != NULL);
     unsigned int fval[ARGVNUM] = {0, 0, 0, 1};
     setColFlag(fval[C]);
-
     if (argvReceive(argc, argv, args, fval, ARGVNUM) == BAD)
     {
         colPrintf(RED, "CMD args ERROR\n");
@@ -64,6 +64,10 @@ int main(int argc, char *argv[])
 
 int argvReceive(int argc, char **argv, const struct argvEx_t *argvs, unsigned int *fval, const int argvnum)
 {
+    MYASSERT(argv != NULL);
+    MYASSERT(argvs != NULL);
+    MYASSERT(fval != NULL);
+
     for(int i = 1; i < argc; i++)
     {
         int j;
@@ -94,6 +98,8 @@ int argvReceive(int argc, char **argv, const struct argvEx_t *argvs, unsigned in
 
 int argvHandler(unsigned int *fval)
 {
+    MYASSERT(fval != NULL);
+
     setColFlag(fval[C]);
     if (fval[H] == 1 || fval[HELP] == 1)
     {

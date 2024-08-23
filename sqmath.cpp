@@ -1,8 +1,8 @@
 #include <math.h>
-#include <assert.h>
 
 #include "sqmath.h"
 #include "consts.h"
+#include "myassert.h"
 
 //! @brief Решает квадратное уравнение вида ax^2 + bx + c = 0.
 //! Коэффициенты берет из структуры coeffs_t, корни пишет в структуру roots_t
@@ -11,11 +11,11 @@
 //! @param      [OUT]   root    указатель на структуру с корнями
 void sqSolve(struct coeffs_t coef, struct roots_t *root)
 {
-    assert(root != NULL);
+    MYASSERT(root != NULL);
 
-    assert(isfinite(coef.a));
-    assert(isfinite(coef.b));
-    assert(isfinite(coef.c));
+    MYASSERT(isfinite(coef.a));
+    MYASSERT(isfinite(coef.b));
+    MYASSERT(isfinite(coef.c));
 
     root -> x1 = 0;
     root -> x2 = 0;
@@ -55,7 +55,7 @@ void sqSolve(struct coeffs_t coef, struct roots_t *root)
 //! @return     1, если число сравнимо с нулем, 0 - если нет
 int isZero(const double a)
 {
-    assert(isfinite(a));
+    MYASSERT(isfinite(a));
     return fabs(a) < EPSILON;
 }
 
@@ -68,9 +68,9 @@ int isZero(const double a)
 //! @return     Возвращает количество корней (1, 0 или INF_ROOTS)
 int linSolve(const double b, const double c, double *x)
 {
-    assert(x != NULL);
-    assert(isfinite(b));
-    assert(isfinite(c));
+    MYASSERT(x != NULL);
+    MYASSERT(isfinite(b));
+    MYASSERT(isfinite(c));
 
     if (isZero(b))
     {
@@ -88,17 +88,17 @@ int linSolve(const double b, const double c, double *x)
 //! @return     Возвращает значение дискриминанта
 double discr(struct coeffs_t coef)
 {
-    assert(isfinite(coef.a));
-    assert(isfinite(coef.b));
-    assert(isfinite(coef.c));
+    MYASSERT(isfinite(coef.a));
+    MYASSERT(isfinite(coef.b));
+    MYASSERT(isfinite(coef.c));
 
     return coef.b*coef.b - 4*coef.a*coef.c;
 }
 
 int equals(const double a, const double b)
 {
-    assert(isfinite(a));
-    assert(isfinite(b));
+    MYASSERT(isfinite(a));
+    MYASSERT(isfinite(b));
     return (fabs(a - b) < EPSILON) ? 1: 0;
 }
 

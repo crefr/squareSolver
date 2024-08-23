@@ -1,0 +1,9 @@
+a.out
+a.exe
+Obj/sqmath.o
+Obj/colPrintf.o
+Obj/main.o
+Obj/printscan.o
+Obj/tests.o
+a.exe
+.vscode/tasks.json

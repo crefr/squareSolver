@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include <assert.h>
 
 #include "tests.h"
 #include "consts.h"
 #include "colPrintf.h"
 #include "sqmath.h"
 #include "colors.h"
+#include "myassert.h"
+
 
 int runTest(struct test_t test)
 {

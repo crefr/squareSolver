@@ -16,7 +16,6 @@ struct argvEx_t
     char fname[MAXLINE];
     //unsigned int fval : 1;
     const char *help;
-
 };
 
 //! @brief  Структура, содержащая 3 коэффициента квадратного уравнения (a, b, c)

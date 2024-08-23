@@ -1,11 +1,11 @@
 #include <stdio.h>
-#include <assert.h>
 #include <ctype.h>
 
 #include "printscan.h"
 #include "consts.h"
 #include "colPrintf.h"
 #include "colors.h"
+#include "myassert.h"
 
 //! @brief Записывает вводимые коэффициенты в структуру coeffs_t, в случае неправильного ввода возвращает 0
 //!
@@ -14,7 +14,7 @@
 
 int scanCoefs(struct coeffs_t *sq)
 {
-    assert(sq != NULL);
+    MYASSERT(sq != NULL);
     double *ptrs[] = {&(sq -> a), &(sq -> b), &(sq -> c)};  // б≤б≤б≤б≤б≤б≤ б≤б≤б≤б≤б≤б≤б≤б≤б≤б≤ б≤б≤б≤ for
     int ch = EOF;
 
