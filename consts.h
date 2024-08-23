@@ -5,6 +5,7 @@ const int INF_ROOTS = -1;
 const double EPSILON = 0.00001;
 
 const int ERROR_ = -10;
+const int EXIT_ = -20;
 enum EXITS {BAD, GOOD};
 
 const int MAXLINE = 100;
@@ -13,7 +14,7 @@ struct argvEx_t
 {
     unsigned int haveVal : 1;
     char fname[MAXLINE];
-    unsigned int fval : 1;
+    //unsigned int fval : 1;
     const char *help;
 
 };
@@ -40,7 +41,5 @@ struct flags_t
     unsigned int h : 1;
     unsigned int c : 1;
 };
-
-enum flags {H = 0, HELP, M, C};
 
 #endif
