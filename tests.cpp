@@ -103,3 +103,43 @@ int runTests()
     }
     return 1;
 }
+
+int freadTests(const char *fname, struct test_t **testp)
+{
+    FILE *fp;
+
+    if ((fp = fopen(fname, "r")) == NULL)
+    {
+        colPrintf(RED, "ERROR cannot open file %s\n", fname);
+        return ERROR_;
+    }
+
+    int n = 0;
+    fscanf(fp, " %d", &n);
+    *testp = (struct test_t*) calloc(n, sizeof(struct test_t));
+    for (int i = 0; i < n; i++)
+    {
+        fscanf(fp, "%d", &((*testp+i) -> num));
+        fscanf(fp, "%lg %lg %lg", &((*testp+i) -> coef.a), &((*testp+i) -> coef.b), &((*testp+i) -> coef.c));
+        fscanf(fp, "%lg %lg %d", &((*testp+i) -> root.x1), &((*testp+i) -> root.x2), &((*testp+i) -> root.nRoots));
+    }
+    return n;
+    fclose(fp);
+}
+
+int frunTests(const char *fname)
+{
+    struct test_t *testp;
+    testp = NULL;
+    int testnum = 0;
+    if ((testnum = freadTests(fname, &testp)) == ERROR_)
+        return 0;
+
+    for (int testi = 0; testi < testnum; testi++)
+    {
+        if (runTest(testp[testi]) == 0)
+            return 0;
+    }
+    return 1;
+}
+

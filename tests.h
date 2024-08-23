@@ -10,6 +10,8 @@ struct test_t
     roots_t root;
 };
 
+int frunTests(const char *fname);
+int freadTests(const char *fname, struct test_t **testp);
 int runTests();
 int runTest(struct test_t test);
 

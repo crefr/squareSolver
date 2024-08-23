@@ -111,7 +111,7 @@ int argvHandler(unsigned int *fval)
     }
     if (fval[M])
     {
-        if (!runTests())
+        if (!frunTests("tests.txt"))
         {
             colPrintf(RED, "TESTING FAILED\n");
             return ERROR_;
