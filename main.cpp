@@ -1,4 +1,4 @@
-﻿//! @file
+//! @file
 
 #include <stdio.h>
 #include <math.h>
@@ -21,16 +21,16 @@ int main(int argc, char *argv[])
 {
     struct argvEx_t args[] =
     {
-        {.haveVal = 0, .fname = "-h", .fval = 0},
-        {.haveVal = 0, .fname = "--help", .fval = 0},
-        {.haveVal = 1, .fname = "-m", .fval = 0},
-        {.haveVal = 1, .fname = "-c", .fval = 1},
+        {.haveVal = 0,  .fname = "-h",       .fval = 0,    .help = "standard --help"},
+        {.haveVal = 0,  .fname = "--help",   .fval = 0,    .help = "standard --help"},
+        {.haveVal = 1,  .fname = "-m",       .fval = 0,    .help = "switches mode to 0 or 1 (-m 0 and -m 1)"},
+        {.haveVal = 1,  .fname = "-c",       .fval = 1,    .help = "switches color mode to 0 or 1 (-c 0 and -c 1)"},
     };
+    const int ARGVNUM = sizeof(args) / sizeof(argvEx_t);
 
     setColFlag(1);
-    const int argvnum = sizeof(args) / sizeof(argvEx_t);
 
-    if (argvReceive(argc, argv, args, argvnum) == BAD)
+    if (argvReceive(argc, argv, args, ARGVNUM) == BAD)
     {
         colPrintf(RED, "CMD args ERROR\n");
         return ERROR_;
@@ -40,11 +40,10 @@ int main(int argc, char *argv[])
 
     if (args[H].fval == 1 || args[HELP].fval == 1)
     {
-        printf("#######################################################\n");
-        printf("-m        \tswitches mode to 0 or 1 (-m 0 and -m 1)\n"
-               "--help, -h\tstandard --help\n"
-               "-c        \tswitches color mode to 0 or 1 (-c 0 and -c 1)\n");
-        printf("#######################################################\n");
+        printf("############################################################################\n");
+        for (int flagi = 0; flagi < ARGVNUM; flagi++)
+            printf("%10s\t%s\n", args[flagi].fname, args[flagi].help);
+        printf("############################################################################\n");
         return 0;
     }
 
