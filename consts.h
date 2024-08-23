@@ -10,14 +10,6 @@ enum EXITS {BAD, GOOD};
 
 const int MAXLINE = 100;
 
-struct argvEx_t
-{
-    unsigned int haveVal : 1;
-    char fname[MAXLINE];
-    //unsigned int fval : 1;
-    const char *help;
-};
-
 //! @brief  Структура, содержащая 3 коэффициента квадратного уравнения (a, b, c)
 struct coeffs_t
 {
@@ -33,12 +25,4 @@ struct roots_t
     double x2;      ///< второй корень
     int nRoots;     ///< количество корней
 };
-
-struct flags_t
-{
-    unsigned int m : 1;
-    unsigned int h : 1;
-    unsigned int c : 1;
-};
-
 #endif

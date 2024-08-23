@@ -8,3 +8,5 @@ Obj/tests.o
 a.exe
 .vscode/tasks.json
 a.exe
+tests.o
+Obj/argvprocessing.o

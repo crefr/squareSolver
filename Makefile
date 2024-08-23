@@ -8,10 +8,10 @@ CFLAGS = -c -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-
 FILENAME = a.exe
 OBJDIR = Obj/
 
-$(FILENAME): Obj/main.o Obj/colPrintf.o Obj/printscan.o Obj/sqmath.o Obj/tests.o
-	$(CC) $(OBJDIR)main.o $(OBJDIR)colPrintf.o $(OBJDIR)printscan.o $(OBJDIR)sqmath.o $(OBJDIR)tests.o -o $(FILENAME)
+$(FILENAME): $(OBJDIR)main.o $(OBJDIR)colPrintf.o $(OBJDIR)printscan.o $(OBJDIR)sqmath.o $(OBJDIR)tests.o $(OBJDIR)argvprocessing.o
+	$(CC) $(OBJDIR)main.o $(OBJDIR)colPrintf.o $(OBJDIR)printscan.o $(OBJDIR)sqmath.o $(OBJDIR)tests.o $(OBJDIR)argvprocessing.o -o $(FILENAME)
 
-Obj/main.o: main.cpp colors.h printscan.h sqmath.h consts.h tests.h colPrintf.h myassert.h
+Obj/main.o: main.cpp colors.h printscan.h sqmath.h consts.h tests.h colPrintf.h myassert.h argvprocessing.h
 	$(CC) $(CFLAGS) main.cpp -o $(OBJDIR)main.o
 
 Obj/colPrintf.o: colPrintf.cpp colPrintf.h colors.h myassert.h
@@ -25,6 +25,9 @@ Obj/sqmath.o: sqmath.cpp sqmath.h consts.h myassert.h
 
 Obj/tests.o: tests.cpp tests.h consts.h colPrintf.h sqmath.h colors.h myassert.h
 	$(CC) $(CFLAGS) tests.cpp -o $(OBJDIR)tests.o
+
+Obj/argvprocessing.o: argvprocessing.cpp argvprocessing.h
+	$(CC) $(CFLAGS) argvprocessing.cpp -o $(OBJDIR)argvprocessing.o
 
 clean:
 	rm $(OBJDIR)*
