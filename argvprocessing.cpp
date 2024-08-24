@@ -33,14 +33,11 @@ int argvReceive(int argc, char **argv, union fvals *fval)
     for(int i = 1; i < argc; i++)
     {
         int j = 0;
-        for (j = 0; j < ARGVNUM; j++)
-        {
-            if (strcmp(argv[i], args[j].fname) == 0)
-            {
+        for (j = 0; j < ARGVNUM; j++){
+            if (strcmp(argv[i], args[j].fname) == 0){
                 if (args[j].valtype == V_NOTDEF)
                     fval[j].bl = 1;
-                else
-                {
+                else{
                     i++;
                     if (i >= argc)
                         return BAD;

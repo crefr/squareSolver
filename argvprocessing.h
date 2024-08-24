@@ -2,7 +2,7 @@
 #ifndef ARGVPR_INCLUDED
 #define ARGVPR_INCLUDED
 
-const int MAXLIN = 100;
+static const int MAXLIN = 100;
 
 //! @brief Структура, хранящая данные о флаге командной строки
 struct argvEx_t
