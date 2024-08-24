@@ -10,7 +10,7 @@
 int scanCoefs(struct coeffs_t *sq)
 {
     MYASSERT(sq != NULL);
-    double *ptrs[] = {&(sq -> a), &(sq -> b), &(sq -> c)};  // б≤б≤б≤б≤б≤б≤ б≤б≤б≤б≤б≤б≤б≤б≤б≤б≤ б≤б≤б≤ for
+    double *ptrs[] = {&(sq -> a), &(sq -> b), &(sq -> c)};  // Указатели на коэффициенты
     int ch = EOF;
 
     bool flag = false;

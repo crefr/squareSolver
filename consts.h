@@ -3,7 +3,7 @@
 #define CONSTS_INCLUDED
 
 const int INF_ROOTS = -1;
-const double EPSILON = 0.00001;
+const double EPSILON = 1e-5;
 
 const int ERROR_ = -10;
 const int EXIT_ = -20;

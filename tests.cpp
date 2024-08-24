@@ -12,7 +12,7 @@
 
 int runTest(struct test_t test)
 {
-    struct roots_t root;
+    struct roots_t root = {}; //ллик
     sqSolve(test.coef, &root);
     if (!equals(test.root.nRoots, root.nRoots) || !eqRoots(test.root, root))
     {
@@ -28,7 +28,7 @@ int runTest(struct test_t test)
     return 1;
 }
 
-int runTests()
+int runTests() //устарело
 {
     const struct test_t tests[] =
     {
@@ -139,7 +139,10 @@ int frunTests(const char *fname)
     for (int testi = 0; testi < testnum; testi++)
     {
         if (runTest(testp[testi]) == 0)
+        {
+            free(testp);
             return 0;
+        }
     }
     free(testp);
     return 1;

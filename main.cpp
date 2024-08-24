@@ -20,7 +20,8 @@ int main(int argc, char *argv[])
 
     union fvals fval[5];
 
-    setFlags(fval);
+    setFlags(fval); //обнуляет флаги
+
     if (argvReceive(argc, argv, fval) == BAD)
     {
         colPrintf(RED, "CMD args ERROR\n");
@@ -39,7 +40,7 @@ int main(int argc, char *argv[])
     printf("# SquareSolver\n"
            "# Made for Summer school MIPT\n");
 
-    printf("Enter a, b, c coefficients (only one number in each line): \n");
+    printf("Enter a, b, c coefficients (separate them with spaces or enters): \n");
     if (scanCoefs(&sq) == 0)
     {
         colPrintf(RED, "!!!INPUT ERROR!!!\n");
