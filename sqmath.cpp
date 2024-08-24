@@ -4,11 +4,6 @@
 #include "consts.h"
 #include "myassert.h"
 
-//! @brief Решает квадратное уравнение вида ax^2 + bx + c = 0.
-//! Коэффициенты берет из структуры coeffs_t, корни пишет в структуру roots_t
-//!
-//! @param      [IN]    coef    структура с коэффициентами
-//! @param      [OUT]   root    указатель на структуру с корнями
 void sqSolve(struct coeffs_t coef, struct roots_t *root)
 {
     MYASSERT(root != NULL);
@@ -48,24 +43,12 @@ void sqSolve(struct coeffs_t coef, struct roots_t *root)
     root -> nRoots = 0;
 }
 
-
-//! @brief Приближенно сравнивает a с 0. Погрешность определяется константой EPSILON
-//!
-//! @param      [IN]    a   сравниваемое число
-//! @return     1, если число сравнимо с нулем, 0 - если нет
 int isZero(const double a)
 {
     MYASSERT(isfinite(a));
     return fabs(a) < EPSILON;
 }
 
-
-//! @brief Решает линейное уравнение вида bx + c = 0
-//!
-//! @param      [IN]    b   коэффициент b
-//! @param      [IN]    c   коэффициент c
-//! @param      [OUT]   x   указатель на корень
-//! @return     Возвращает количество корней (1, 0 или INF_ROOTS)
 int linSolve(const double b, const double c, double *x)
 {
     MYASSERT(x != NULL);
@@ -82,10 +65,6 @@ int linSolve(const double b, const double c, double *x)
     return 1;
 }
 
-//! @brief Считает дискриминант, используя коэффициенты из структуры типа coeffs_t
-//!
-//! @param      [IN]    coef    структура с коэффициентами
-//! @return     Возвращает значение дискриминанта
 double discr(struct coeffs_t coef)
 {
     MYASSERT(isfinite(coef.a));
@@ -101,7 +80,6 @@ int equals(const double a, const double b)
     MYASSERT(isfinite(b));
     return (fabs(a - b) < EPSILON) ? 1: 0;
 }
-
 
 bool eqRoots(roots_t root1, roots_t root2)
 {

@@ -7,7 +7,7 @@
 #include "colPrintf.h"
 
 #define MYASSERT(arg)                                                                                               \
-            do{                                                                                                       \
+            do{                                                                                                     \
                 if (!(arg))                                                                                         \
                 {                                                                                                   \
                     colPrintf(RED, "\tMYASSERT #%d: ERROR in file: %s, function %s(), line %d\n \t>>> " #arg  "\n", \

@@ -104,6 +104,7 @@ int runTests()
     return 1;
 }
 
+
 int freadTests(const char *fname, struct test_t **testp)
 {
     FILE *fp = NULL;
@@ -119,9 +120,9 @@ int freadTests(const char *fname, struct test_t **testp)
     *testp = (struct test_t*) calloc(n, sizeof(struct test_t));
     for (int i = 0; i < n; i++)
     {
-        fscanf(fp, "%d", &((*testp+i) -> num));
-        fscanf(fp, "%lg %lg %lg", &((*testp)[i]. coef.a), &((*testp+i) -> coef.b), &((*testp+i) -> coef.c));
-        fscanf(fp, "%lg %lg %d", &((*testp+i) -> root.x1), &((*testp+i) -> root.x2), &((*testp+i) -> root.nRoots));
+        fscanf(fp, "%d", &((*testp)[i].num));
+        fscanf(fp, "%lg %lg %lg", &((*testp)[i].coef.a), &((*testp)[i].coef.b), &((*testp)[i].coef.c));
+        fscanf(fp, "%lg %lg %d", &((*testp)[i].root.x1), &((*testp)[i].root.x2), &((*testp)[i].root.nRoots));
     }
     fclose(fp);
     return n;

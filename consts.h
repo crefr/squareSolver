@@ -1,3 +1,4 @@
+//! @file
 #ifndef CONSTS_INCLUDED
 #define CONSTS_INCLUDED
 
