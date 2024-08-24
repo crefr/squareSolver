@@ -3,14 +3,15 @@
 #include "sqmath.h"
 #include "consts.h"
 #include "myassert.h"
+#include "myisfinite.h"
 
 void sqSolve(struct coeffs_t coef, struct roots_t *root)
 {
     MYASSERT(root != NULL);
 
-    MYASSERT(isfinite(coef.a));
-    MYASSERT(isfinite(coef.b));
-    MYASSERT(isfinite(coef.c));
+    MYASSERT(myisfinite(coef.a));
+    MYASSERT(myisfinite(coef.b));
+    MYASSERT(myisfinite(coef.c));
 
     root -> x1 = 0;
     root -> x2 = 0;
@@ -45,15 +46,15 @@ void sqSolve(struct coeffs_t coef, struct roots_t *root)
 
 int isZero(const double a)
 {
-    MYASSERT(isfinite(a));
+    MYASSERT(myisfinite(a));
     return fabs(a) < EPSILON;
 }
 
 int linSolve(const double b, const double c, double *x)
 {
     MYASSERT(x != NULL);
-    MYASSERT(isfinite(b));
-    MYASSERT(isfinite(c));
+    MYASSERT(myisfinite(b));
+    MYASSERT(myisfinite(c));
 
     if (isZero(b))
     {
@@ -67,17 +68,17 @@ int linSolve(const double b, const double c, double *x)
 
 double discr(struct coeffs_t coef)
 {
-    MYASSERT(isfinite(coef.a));
-    MYASSERT(isfinite(coef.b));
-    MYASSERT(isfinite(coef.c));
+    MYASSERT(myisfinite(coef.a));
+    MYASSERT(myisfinite(coef.b));
+    MYASSERT(myisfinite(coef.c));
 
     return coef.b*coef.b - 4*coef.a*coef.c;
 }
 
 int equals(const double a, const double b)
 {
-    MYASSERT(isfinite(a));
-    MYASSERT(isfinite(b));
+    MYASSERT(myisfinite(a));
+    MYASSERT(myisfinite(b));
     return (fabs(a - b) < EPSILON) ? 1: 0;
 }
 
