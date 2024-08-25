@@ -26,7 +26,7 @@ $(OBJDIR)sqmath.o: sqmath.cpp sqmath.h consts.h myassert.h myisfinite.h
 $(OBJDIR)tests.o: tests.cpp tests.h consts.h colPrintf.h sqmath.h colors.h myassert.h
 	$(CC) $(CFLAGS) tests.cpp -o $(OBJDIR)tests.o
 
-$(OBJDIR)argvprocessing.o: argvprocessing.cpp argvprocessing.h
+$(OBJDIR)argvprocessing.o: argvprocessing.cpp argvprocessing.h myassert.h colPrintf.h consts.h
 	$(CC) $(CFLAGS) argvprocessing.cpp -o $(OBJDIR)argvprocessing.o
 
 $(OBJDIR)myisfinite.o: myisfinite.cpp myisfinite.h

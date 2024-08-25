@@ -133,18 +133,19 @@ int frunTests(const char *fname)
     struct test_t *testp;
     testp = NULL;
     int testnum = 0;
-    if ((testnum = freadTests(fname, &testp)) == ERROR_)
-        return 0;
+    if ((testnum = freadTests(fname, &testp)) == BAD)
+        return BAD;
 
     for (int testi = 0; testi < testnum; testi++)
     {
         if (runTest(testp[testi]) == 0)
         {
             free(testp);
-            return 0;
+            colPrintf(RED, "TESTING FAILED\n");
+            return BAD;
         }
     }
     free(testp);
-    return 1;
+    return GOOD;
 }
 

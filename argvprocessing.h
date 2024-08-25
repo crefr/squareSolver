@@ -37,5 +37,8 @@ int argvHandler(union fvals *fval);
 //! @param      [OUT]    fval    массив типа union fvals со значениями флагов
 void setFlags(union fvals *fval);
 
+ //! @brief Печатает --help, берет данные из args, определенной в argvprocessing.cpp
+void printHelp();
+
 
 #endif

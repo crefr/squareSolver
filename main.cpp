@@ -16,22 +16,18 @@
 
 int main(int argc, char *argv[])
 {
-    MYASSERT(argv != NULL);
-
     union fvals fval[5];
-
     setFlags(fval); //обнуляет флаги
-
     if (argvReceive(argc, argv, fval) == BAD)
     {
         colPrintf(RED, "CMD args ERROR\n");
         return ERROR_;
     }
 
-    int hh = argvHandler(fval);
-    if(hh == EXIT_)
+    int handlerOut = argvHandler(fval);
+    if(handlerOut == EXIT)
         return 0;
-    else if (hh == ERROR_)
+    else if (handlerOut == BAD)
         return ERROR_;
 
     struct coeffs_t sq;
@@ -49,4 +45,25 @@ int main(int argc, char *argv[])
     sqSolve(sq, &root);
     printRoots(root);
     return 0;
+}
+
+int argvHandler(union fvals *fval)
+{
+    MYASSERT(fval != NULL);
+
+    setColFlag(fval[C].bl);
+    if (fval[H].bl || fval[HELP].bl)
+    {
+        printHelp();
+        return EXIT;
+    }
+    if (fval[M].bl)
+    {
+        if (!frunTests(fval[F].str))
+        {
+            return BAD;
+        }
+        return EXIT;
+    }
+    return GOOD;
 }

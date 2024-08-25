@@ -3,18 +3,11 @@
 
 #include "consts.h"
 #include "argvprocessing.h"
-#include "tests.h"
 #include "myassert.h"
 #include "colPrintf.h"
 
-// const int ERROR_ = -10;
-// const int EXIT_ = -20;
-// enum EXITS {BAD, GOOD};
-
-// const int MAXLINE = 100;
-
 enum valtypes {V_NOTDEF = 0, V_BOOL, V_STRING, V_DOUBLE, V_INT};
-enum flags {H = 0, HELP, M, C, F};
+//enum flags {H = 0, HELP, M, C, F};
 static const struct argvEx_t args[] =
 {
     {.valtype = V_NOTDEF,       .fname = "-h",          .help = "standard --help"},
@@ -30,59 +23,57 @@ int argvReceive(int argc, char **argv, union fvals *fval)
     MYASSERT(argv != NULL);
     MYASSERT(fval != NULL);
 
-    for(int i = 1; i < argc; i++)
+    int argindex = 1;
+    while(argindex < argc)
     {
-        int j = 0;
-        for (; j < ARGVNUM; j++){
-            if (strcmp(argv[i], args[j].fname) == 0){
-                if (args[j].valtype == V_NOTDEF)
-                    fval[j].bl = 1;
+        int flagindex = 0;
+        for (; flagindex < ARGVNUM; flagindex++){
+            if (strcmp(argv[argindex], args[flagindex].fname) == 0){
+                if (args[flagindex].valtype == V_NOTDEF)
+                    fval[flagindex].bl = 1;
                 else{
-                    i++;
-                    if (i >= argc)
+                    argindex++;
+                    if (argindex >= argc)
                         return BAD;
-                    if (args[j].valtype == V_BOOL)
+                    switch(args[flagindex].valtype)
                     {
-                        if (strcmp("0", argv[i]) == 0)
-                            fval[j].bl = 0;
-                        else if (strcmp("1", argv[i]) == 0)
-                            fval[j].bl = 1;
-                        else return BAD;
+                        case V_BOOL:
+                            if (strcmp("0", argv[argindex]) == 0)
+                                fval[flagindex].bl = 0;
+                            else if (strcmp("1", argv[argindex]) == 0)
+                                fval[flagindex].bl = 1;
+                            else return BAD;
+                            break;
+                        case V_STRING:
+                            strcpy(fval[flagindex].str, argv[argindex]);
+                            break;
+                        case V_DOUBLE:
+                            if (sscanf(argv[argindex], "%lg", &(fval[flagindex].dbl)) != 1)
+                                return BAD;
+                            break;
+                        case V_INT:
+                            if (sscanf(argv[argindex], "%d", &(fval[flagindex].in)) != 1)
+                                return BAD;
+                            break;
+                        default:
+                            return BAD;
+                            break;
                     }
-                    else if (args[j].valtype == V_STRING)
-                        strcpy(fval[j].str, argv[i]);
-                    else return BAD;
                 }
                 break;
             }
-        } if(j == ARGVNUM) return BAD;
+        } if(flagindex == ARGVNUM) return BAD;
+        argindex++;
     }
     return GOOD;
 }
 
-int argvHandler(union fvals *fval)
+void printHelp()
 {
-    MYASSERT(fval != NULL);
-
-    setColFlag(fval[C].bl);
-    if (fval[H].bl || fval[HELP].bl)
-    {
-        printf("############################################################################\n");
-        for (int flagi = 0; flagi < ARGVNUM; flagi++)
-            printf("%10s\t%s\n", args[flagi].fname, args[flagi].help);
-        printf("############################################################################\n");
-        return EXIT_;
-    }
-    if (fval[M].bl)
-    {
-        if (!frunTests(fval[F].str))
-        {
-            colPrintf(RED, "TESTING FAILED\n");
-            return ERROR_;
-        }
-        return EXIT_;
-    }
-    return 0;
+    printf("############################################################################\n");
+    for (int flagi = 0; flagi < ARGVNUM; flagi++)
+        printf("%10s\t%s\n", args[flagi].fname, args[flagi].help);
+    printf("############################################################################\n");
 }
 
 void setFlags(union fvals *fval)
