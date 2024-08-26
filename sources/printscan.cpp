@@ -55,7 +55,8 @@ int scanCoefs(struct coeffs_t *sq)
     return 1;
 }
 
-void printRoots(struct roots_t root){
+void printRoots(const struct roots_t root)
+{
     switch(root.nRoots)
     {
         case 0:

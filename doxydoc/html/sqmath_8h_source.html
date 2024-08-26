@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SquareSolver: Исходный файл headers/sqmath.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SquareSolver
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('sqmath_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">sqmath.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="sqmath_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef SQMATH_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define SQMATH_INCLUDED</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keywordtype">void</span> <a class="code hl_function" href="sqmath_8h.html#a81a063d50a9d1121b1d696f2e0e7e8e7">sqSolve</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structcoeffs__t.html">coeffs_t</a> coef, <span class="keyword">struct</span> <a class="code hl_struct" href="structroots__t.html">roots_t</a> *root);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">int</span> <a class="code hl_function" href="sqmath_8h.html#a72f9e3f1ac3e22071bdcdd823010b63b">isZero</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> a);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">double</span> <a class="code hl_function" href="sqmath_8h.html#aabc47b97dff1309b0dba82045778e896">discr</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structcoeffs__t.html">coeffs_t</a> coef);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">int</span> <a class="code hl_function" href="sqmath_8h.html#a498ba6941342defd5d42da5964cf8f2e">linSolve</a>(<span class="keywordtype">double</span> b, <span class="keywordtype">double</span> c, <span class="keywordtype">double</span> *x);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">int</span> <a class="code hl_function" href="sqmath_8h.html#ab0234a5ff4dc4a9f11df5d39ac61622f">equals</a>(<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keywordtype">bool</span> <a class="code hl_function" href="sqmath_8h.html#a4549ae82b726502768498c8469b8143f">eqRoots</a>(<a class="code hl_struct" href="structroots__t.html">roots_t</a> root1, <a class="code hl_struct" href="structroots__t.html">roots_t</a> root2);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="asqmath_8h_html_a4549ae82b726502768498c8469b8143f"><div class="ttname"><a href="sqmath_8h.html#a4549ae82b726502768498c8469b8143f">eqRoots</a></div><div class="ttdeci">bool eqRoots(roots_t root1, roots_t root2)</div><div class="ttdoc">С погрешностью EPSILON сравнивает корни типа roots_t.</div><div class="ttdef"><b>Definition</b> sqmath.cpp:85</div></div>
+<div class="ttc" id="asqmath_8h_html_a498ba6941342defd5d42da5964cf8f2e"><div class="ttname"><a href="sqmath_8h.html#a498ba6941342defd5d42da5964cf8f2e">linSolve</a></div><div class="ttdeci">int linSolve(double b, double c, double *x)</div><div class="ttdoc">Решает линейное уравнение вида bx + c = 0.</div><div class="ttdef"><b>Definition</b> sqmath.cpp:53</div></div>
+<div class="ttc" id="asqmath_8h_html_a72f9e3f1ac3e22071bdcdd823010b63b"><div class="ttname"><a href="sqmath_8h.html#a72f9e3f1ac3e22071bdcdd823010b63b">isZero</a></div><div class="ttdeci">int isZero(const double a)</div><div class="ttdoc">Приближенно сравнивает a с 0. Погрешность определяется константой EPSILON.</div><div class="ttdef"><b>Definition</b> sqmath.cpp:47</div></div>
+<div class="ttc" id="asqmath_8h_html_a81a063d50a9d1121b1d696f2e0e7e8e7"><div class="ttname"><a href="sqmath_8h.html#a81a063d50a9d1121b1d696f2e0e7e8e7">sqSolve</a></div><div class="ttdeci">void sqSolve(struct coeffs_t coef, struct roots_t *root)</div><div class="ttdoc">Решает квадратное уравнение вида ax^2 + bx + c = 0. Коэффициенты берет из структуры coeffs_t,...</div><div class="ttdef"><b>Definition</b> sqmath.cpp:8</div></div>
+<div class="ttc" id="asqmath_8h_html_aabc47b97dff1309b0dba82045778e896"><div class="ttname"><a href="sqmath_8h.html#aabc47b97dff1309b0dba82045778e896">discr</a></div><div class="ttdeci">double discr(struct coeffs_t coef)</div><div class="ttdoc">Считает дискриминант, используя коэффициенты из структуры типа coeffs_t.</div><div class="ttdef"><b>Definition</b> sqmath.cpp:69</div></div>
+<div class="ttc" id="asqmath_8h_html_ab0234a5ff4dc4a9f11df5d39ac61622f"><div class="ttname"><a href="sqmath_8h.html#ab0234a5ff4dc4a9f11df5d39ac61622f">equals</a></div><div class="ttdeci">int equals(double a, double b)</div><div class="ttdoc">С погрешностью EPSILON сравнивает 2 числа типа double.</div><div class="ttdef"><b>Definition</b> sqmath.cpp:78</div></div>
+<div class="ttc" id="astructcoeffs__t_html"><div class="ttname"><a href="structcoeffs__t.html">coeffs_t</a></div><div class="ttdoc">Структура, содержащая 3 коэффициента квадратного уравнения (a, b, c)</div><div class="ttdef"><b>Definition</b> consts.h:17</div></div>
+<div class="ttc" id="astructroots__t_html"><div class="ttname"><a href="structroots__t.html">roots_t</a></div><div class="ttdoc">Структура, 2 переменные для корней квадратного уравнения и nRoots, содержащая количество корней</div><div class="ttdef"><b>Definition</b> consts.h:25</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7f57b1e41c5acd0e859ae5f3a2b075a9.html">headers</a></li><li class="navelem"><a class="el" href="sqmath_8h.html">sqmath.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

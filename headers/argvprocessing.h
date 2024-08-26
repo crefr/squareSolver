@@ -21,12 +21,23 @@ union fvals
     char str[MAXLIN];     ///< Строка
 };
 
+enum valtypes {V_NOTDEF = 0, V_BOOL, V_STRING, V_DOUBLE, V_INT};
+const struct argvEx_t args[] =
+{
+    {.valtype = V_NOTDEF,       .fname = "-h",          .help = "standard --help"},
+    {.valtype = V_NOTDEF,       .fname = "--help",      .help = "standard --help"},
+    {.valtype = V_BOOL,         .fname = "-m",          .help = "switches mode to 0 or 1 (-m 0 and -m 1)"},
+    {.valtype = V_BOOL,         .fname = "-c",          .help = "switches color mode to 0 or 1 (-c 0 and -c 1)"},
+    {.valtype = V_STRING,       .fname = "-f",          .help = "an argument after -f will be the name of file with tests (ex. -f tests.txt) (tests.txt on default)"}
+};
+const int ARGVNUM = sizeof(args) / sizeof(argvEx_t);
+
 //! @brief Обрабатывает аргументы командной строки, примеры которых лежат в массиве структур argvEx_t в argvprocessing.cpp, заполняет массив fval значениями флагов
 //! @param      [IN]    argc    argc из main, количество аргументов
 //! @param      [IN]    argv    указатель на массив строк argv
 //! @param      [OUT]   fval    массив типа union fvals, в который записываются значения флагов
 //! @return     Возвращает BAD, если произошла какая-то ошибка, GOOD - если все хорошо (константы, заданы в consts.h)
-int argvReceive(int argc, char **argv, union fvals *fval);
+int argvReceive(const int argc, char **argv, union fvals *fval);
 
 //! @brief Заполняет значение флага fvals
 //! @param      [IN]    argv        указатель на массив строк argv
@@ -34,7 +45,7 @@ int argvReceive(int argc, char **argv, union fvals *fval);
 //! @param      [OUT]   fval        массив типа union fvals, в который записываются значения флагов
 //! @param      [IN]    flagindex   индекс флага
 //! @return     Возвращает BAD, если произошла какая-то ошибка, GOOD - если все хорошо (константы, заданы в consts.h)
-int fillFval(char **argv, int argindex, union fvals *fval, int flagindex);
+int fillFval(char **argv, const int argindex, union fvals *fval, const int flagindex);
 
 //! @brief Выставляет начальные значения массива fval
 //! @param      [OUT]    fval    массив типа union fvals со значениями флагов

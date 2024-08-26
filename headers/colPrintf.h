@@ -4,7 +4,7 @@
 
 //! @brief Функция, выставляющая значение colFlag
 //! @param      [IN]    colF    Значение флага, которое нужно выставить
-void setColFlag(unsigned int colF);
+void setColFlag(const unsigned int colF);
 
 //! @brief (Устаревшее) Если colFlag == 1, текст окрашивается с помощью цветовой строки color, в остальном - обычный printf
 //! @param      [IN]    color    Константная строка цвета (подобные описаны в colors.h)

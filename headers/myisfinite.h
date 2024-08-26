@@ -3,7 +3,7 @@
 #define MYISFINITE_INCLUDED
 
 /// @brief Возможные возвращаемые значения функции isNotFinite()
-enum finites {ISNEGINF = -1, ISNAN, ISINF};
+enum infornan {ISNEGINF = -1, ISNAN, ISINF};
 
 /**
  * @brief Определяет чем из следующего является число a (заведомо неадекватное): NAN, INFINITY, -INFINITY

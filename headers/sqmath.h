@@ -7,7 +7,7 @@
 //!
 //! @param      [IN]    coef    структура с коэффициентами
 //! @param      [OUT]   root    указатель на структуру с корнями
-void sqSolve(struct coeffs_t coef, struct roots_t *root);
+void sqSolve(const struct coeffs_t coef, struct roots_t *root);
 
 //! @brief Приближенно сравнивает a с 0. Погрешность определяется константой EPSILON
 //!
@@ -19,7 +19,7 @@ int isZero(const double a);
 //!
 //! @param      [IN]    coef    структура с коэффициентами
 //! @return     Возвращает значение дискриминанта
-double discr(struct coeffs_t coef);
+double discr(const struct coeffs_t coef);
 
 //! @brief Решает линейное уравнение вида bx + c = 0
 //!
@@ -39,6 +39,6 @@ int equals(double a, double b);
 //! @param      [IN]    root1   Структура типа roots_t, содержащая корни
 //! @param      [IN]    root2   Структура типа roots_t, содержащая корни
 //! @return     Возвращает 1, если числа структура содержат одинаковые корни с точностью до EPSILON (порядок не важен) и 0 - в обратном случае
-bool eqRoots(roots_t root1, roots_t root2);
+bool eqRoots(const struct roots_t root1, const struct roots_t root2);
 
 #endif

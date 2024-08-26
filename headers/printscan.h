@@ -12,6 +12,6 @@ int scanCoefs(struct coeffs_t *coeffs);
 //! @brief Печатает корни из структуры roots_t
 //!
 //! @param      [IN]    root    структура с корнями типа roots_t
-void printRoots(struct roots_t root);
+void printRoots(const struct roots_t root);
 
 #endif

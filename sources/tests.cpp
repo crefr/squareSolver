@@ -10,11 +10,11 @@
 #include "myassert.h"
 
 
-int runTest(struct test_t test)
+int runTest(const struct test_t test)
 {
-    struct roots_t root = {}; //ллик
+    struct roots_t root = {};
     sqSolve(test.coef, &root);
-    if (!equals(test.root.nRoots, root.nRoots) || !eqRoots(test.root, root))
+    if (test.root.nRoots != root.nRoots || !eqRoots(test.root, root))
     {
 
         colPrintf(RED, "Error Test %d:\na = %lg, b = %lg, c = %lg\n"

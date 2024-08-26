@@ -18,11 +18,11 @@
 //! @brief Действует в зависимости от значений флагов в fval
 //! @param      [IN]    fval    массив типа union fvals со значениями флагов
 //! @return     Может вернуть EXIT_ (выйти из программы), ERROR_ (ошибка) и 0 (все хорошо)
-int argvHandler(union fvals *fval);
+int argvHandler(const union fvals *fval);
 
 int main(int argc, char *argv[])
 {
-    union fvals fval[5];
+    union fvals fval[ARGVNUM];
     setFlags(fval); //обнуляет флаги
     if (argvReceive(argc, argv, fval) == BAD)
     {
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-int argvHandler(union fvals *fval)
+int argvHandler(const union fvals *fval)
 {
     MYASSERT(fval != NULL);
 

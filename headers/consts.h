@@ -5,8 +5,7 @@
 const int INF_ROOTS = -1;
 const double EPSILON = 1e-5;
 
-const int ERROR_ = -10;
-const int EXIT_ = -20;
+enum HEXITS {ERROR_ = -10, EXIT_};
 enum EXITS {BAD = 0, GOOD, EXIT};
 enum flags {H = 0, HELP, M, C, F};
 

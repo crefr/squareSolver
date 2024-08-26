@@ -33,6 +33,6 @@ int runTests();
 //!
 //! @param      [IN]    test     Структура с эталонными данными
 //! @return     Возвращает 0, если тест не пройден, 1 - при успешном выполнении теста
-int runTest(struct test_t test);
+int runTest(const struct test_t test);
 
 #endif // TESTS_H_INCLUDED

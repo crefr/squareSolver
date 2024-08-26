@@ -7,14 +7,15 @@
 
 static unsigned int colfl = 0;
 
-void setColFlag(unsigned int colF)
+void setColFlag(const unsigned int colF)
 {
     colfl = colF;
 }
 
 void colPrintf_old(const char *color, const char *format, ...)
 {
-    MYASSERT(color != NULL && format != NULL);
+    MYASSERT(color != NULL);
+    MYASSERT(format != NULL);
     if (colfl)
         printf("%s", color);
     va_list ap;
@@ -60,7 +61,8 @@ void colPrintf_old(const char *color, const char *format, ...)
 
 void colPrintf(const char *color, const char *format, ...)
 {
-    MYASSERT(color != NULL && format != NULL);
+    MYASSERT(color != NULL);
+    MYASSERT(format != NULL);
     if (colfl)
         printf("%s", color);
     va_list ap;

@@ -22,7 +22,7 @@ int myisfinite(double a)
 
 int myINForNAN(double a)
 {
-    int size = sizeof(double) * 8;
+    int size = sizeof(a) * 8;
         // это из формулы, данной в стандарте
     long int w = lround(4 * log2(size)) - 13;
         //маска на биты мантиссы (если она ноль, то это INF, иначе NAN)

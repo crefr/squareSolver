@@ -1,0 +1,32 @@
+<map id="myisfinite" name="myisfinite">
+<area shape="rect" id="Node000001" title="Буквально isfinite, только мой &#45; если число не NAN, INF, &#45;INF, возвращает 1." alt="" coords="817,107,894,133"/>
+<area shape="rect" id="Node000002" href="$sqmath_8cpp.html#aabc47b97dff1309b0dba82045778e896" title="Считает дискриминант, используя коэффициенты из структуры типа coeffs_t." alt="" coords="715,107,765,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="801,123,765,123,765,117,801,117"/>
+<area shape="rect" id="Node000003" href="$sqmath_8cpp.html#a81a063d50a9d1121b1d696f2e0e7e8e7" title="Решает квадратное уравнение вида ax^2 + bx + c = 0. Коэффициенты берет из структуры coeffs_t,..." alt="" coords="479,107,547,133"/>
+<area shape="poly" id="edge18_Node000001_Node000003" title=" " alt="" coords="802,141,769,148,708,152,647,148,547,131,548,126,647,143,708,146,768,143,801,136"/>
+<area shape="rect" id="Node000009" href="$sqmath_8cpp.html#afc2fd18b983db1a6b8530aa3fb24da1e" title="С погрешностью EPSILON сравнивает 2 числа типа double." alt="" coords="600,208,659,235"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="832,147,803,171,770,192,712,212,660,221,659,216,711,206,768,187,800,166,828,143"/>
+<area shape="rect" id="Node000011" href="$sqmath_8cpp.html#a72f9e3f1ac3e22071bdcdd823010b63b" title="Приближенно сравнивает a с 0. Погрешность определяется константой EPSILON." alt="" coords="711,56,769,83"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="808,102,768,84,770,79,811,98"/>
+<area shape="rect" id="Node000012" href="$sqmath_8cpp.html#aadb30e038879ab02aee3f881974ed8fc" title="Решает линейное уравнение вида bx + c = 0." alt="" coords="596,5,663,32"/>
+<area shape="poly" id="edge17_Node000001_Node000012" title=" " alt="" coords="831,97,802,70,768,46,714,29,663,22,664,17,715,24,770,42,806,66,835,93"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="700,123,548,123,548,117,700,117"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,157,55,184"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="463,127,242,148,56,170,55,165,242,143,463,122"/>
+<area shape="rect" id="Node000005" href="$tests_8cpp.html#a4dfedd6bea487396641c51297a35d57b" title="Тестирует функцию sqSolve, используя данные из test." alt="" coords="365,157,430,184"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="468,142,431,159,428,154,466,138"/>
+<area shape="rect" id="Node000006" href="$tests_8cpp.html#af69c2591503f36d530dd5912015e849c" title="Запускает тесты из файла с именем fname, использует freadTests() и runTest()" alt="" coords="242,208,317,235"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="352,193,314,210,311,205,350,188"/>
+<area shape="rect" id="Node000008" href="$tests_8cpp.html#a2dcdccc8a8ededb7804d00ba921edb73" title="(Устаревшее) Выполняет тесты из внутреннего массива типа struct test_t" alt="" coords="244,157,315,184"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="349,173,316,173,316,168,349,168"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html#ac52ecffca95f814564c9077d09c4b594" title="Действует в зависимости от значений флагов в fval." alt="" coords="103,183,194,209"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="226,214,194,207,195,202,227,209"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="87,186,54,178,55,173,88,180"/>
+<area shape="poly" id="edge12_Node000009_Node000005" title=" " alt="" coords="584,218,477,199,429,184,431,179,478,193,585,213"/>
+<area shape="rect" id="Node000010" href="$sqmath_8cpp.html#a4549ae82b726502768498c8469b8143f" title="С погрешностью EPSILON сравнивает корни типа roots_t." alt="" coords="478,157,548,184"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="585,205,544,187,546,182,587,200"/>
+<area shape="poly" id="edge11_Node000010_Node000005" title=" " alt="" coords="462,173,430,173,430,168,462,168"/>
+<area shape="poly" id="edge16_Node000011_Node000003" title=" " alt="" coords="697,81,597,104,548,115,547,110,595,99,696,76"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="696,52,659,35,662,30,698,47"/>
+<area shape="poly" id="edge15_Node000012_Node000003" title=" " alt="" coords="603,44,531,108,528,104,600,40"/>
+</map>

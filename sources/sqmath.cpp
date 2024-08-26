@@ -5,7 +5,7 @@
 #include "myassert.h"
 #include "myisfinite.h"
 
-void sqSolve(struct coeffs_t coef, struct roots_t *root)
+void sqSolve(const struct coeffs_t coef, struct roots_t *root)
 {
     MYASSERT(root != NULL);
 
@@ -66,7 +66,7 @@ int linSolve(const double b, const double c, double *x)
     return 1;
 }
 
-double discr(struct coeffs_t coef)
+double discr(const struct coeffs_t coef)
 {
     MYASSERT(myisfinite(coef.a));
     MYASSERT(myisfinite(coef.b));
@@ -82,7 +82,7 @@ int equals(const double a, const double b)
     return (fabs(a - b) < EPSILON) ? 1: 0;
 }
 
-bool eqRoots(roots_t root1, roots_t root2)
+bool eqRoots(const struct roots_t root1, const struct roots_t root2)
 {
     if(equals(root1.x1, root2.x1) && equals(root1.x2, root2.x2))
         return 1;

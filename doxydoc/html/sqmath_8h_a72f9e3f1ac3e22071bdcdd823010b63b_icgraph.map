@@ -1,0 +1,19 @@
+<map id="isZero" name="isZero">
+<area shape="rect" id="Node000001" title="Приближенно сравнивает a с 0. Погрешность определяется константой EPSILON." alt="" coords="709,31,767,57"/>
+<area shape="rect" id="Node000002" href="$sqmath_8cpp.html#aadb30e038879ab02aee3f881974ed8fc" title="Решает линейное уравнение вида bx + c = 0." alt="" coords="594,5,661,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="694,37,661,29,663,24,695,31"/>
+<area shape="rect" id="Node000003" href="$sqmath_8cpp.html#a81a063d50a9d1121b1d696f2e0e7e8e7" title="Решает квадратное уравнение вида ax^2 + bx + c = 0. Коэффициенты берет из структуры coeffs_t,..." alt="" coords="478,31,546,57"/>
+<area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="694,47,546,47,546,41,694,41"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="579,32,547,39,546,34,578,27"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,31,55,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="462,47,55,47,55,41,462,41"/>
+<area shape="rect" id="Node000005" href="$tests_8cpp.html#a4dfedd6bea487396641c51297a35d57b" title="Тестирует функцию sqSolve, используя данные из test." alt="" coords="365,56,430,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="463,57,431,65,429,60,462,52"/>
+<area shape="rect" id="Node000006" href="$tests_8cpp.html#af69c2591503f36d530dd5912015e849c" title="Запускает тесты из файла с именем fname, использует freadTests() и runTest()" alt="" coords="242,56,317,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="350,72,318,72,318,67,350,67"/>
+<area shape="rect" id="Node000008" href="$tests_8cpp.html#a2dcdccc8a8ededb7804d00ba921edb73" title="(Устаревшее) Выполняет тесты из внутреннего массива типа struct test_t" alt="" coords="244,107,315,133"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="352,92,314,109,311,104,350,87"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html#ac52ecffca95f814564c9077d09c4b594" title="Действует в зависимости от значений флагов в fval." alt="" coords="103,56,194,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="226,72,194,72,194,67,226,67"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="87,59,54,52,55,47,88,54"/>
+</map>

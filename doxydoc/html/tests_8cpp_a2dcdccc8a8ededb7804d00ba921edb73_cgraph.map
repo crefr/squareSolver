@@ -1,0 +1,27 @@
+<map id="runTests" name="runTests">
+<area shape="rect" id="Node000001" title="(Устаревшее) Выполняет тесты из внутреннего массива типа struct test_t" alt="" coords="5,81,77,108"/>
+<area shape="rect" id="Node000002" href="$tests_8cpp.html#a4dfedd6bea487396641c51297a35d57b" title="Тестирует функцию sqSolve, используя данные из test." alt="" coords="125,81,189,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,92,109,92,109,97,77,97"/>
+<area shape="rect" id="Node000003" href="$col_printf_8cpp.html#ae860d5ee10e4e730f39d929a55709678" title="Если colFlag == 1, текст окрашивается с помощью цветовой строки color, в остальном &#45; обычный printf." alt="" coords="238,5,307,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="177,79,236,39,239,43,180,83"/>
+<area shape="rect" id="Node000004" href="$sqmath_8cpp.html#a4549ae82b726502768498c8469b8143f" title="С погрешностью EPSILON сравнивает корни типа roots_t." alt="" coords="237,56,307,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="189,85,221,78,222,83,190,90"/>
+<area shape="rect" id="Node000005" href="$sqmath_8cpp.html#afc2fd18b983db1a6b8530aa3fb24da1e" title="С погрешностью EPSILON сравнивает 2 числа типа double." alt="" coords="359,56,419,83"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="189,95,244,96,307,92,344,83,345,88,308,97,245,102,189,100"/>
+<area shape="rect" id="Node000007" href="$sqmath_8cpp.html#a81a063d50a9d1121b1d696f2e0e7e8e7" title="Решает квадратное уравнение вида ax^2 + bx + c = 0. Коэффициенты берет из структуры coeffs_t,..." alt="" coords="238,157,306,184"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="180,106,239,146,236,151,177,111"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="308,67,344,67,344,72,308,72"/>
+<area shape="rect" id="Node000006" href="$myisfinite_8cpp.html#afd2bf05e56bb7a125c4fe3587f897deb" title="Буквально isfinite, только мой &#45; если число не NAN, INF, &#45;INF, возвращает 1." alt="" coords="576,157,653,184"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="419,70,472,79,529,99,563,120,591,144,588,148,560,124,527,104,470,84,419,75"/>
+<area shape="poly" id="edge15_Node000007_Node000006" title=" " alt="" coords="306,159,355,149,441,138,480,138,528,143,561,150,560,155,528,148,480,143,442,143,356,155,307,164"/>
+<area shape="rect" id="Node000008" href="$sqmath_8cpp.html#aabc47b97dff1309b0dba82045778e896" title="Считает дискриминант, используя коэффициенты из структуры типа coeffs_t." alt="" coords="475,157,524,184"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="307,168,459,168,459,173,307,173"/>
+<area shape="rect" id="Node000009" href="$sqmath_8cpp.html#a72f9e3f1ac3e22071bdcdd823010b63b" title="Приближенно сравнивает a с 0. Погрешность определяется константой EPSILON." alt="" coords="471,208,528,235"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="307,176,456,209,455,214,306,181"/>
+<area shape="rect" id="Node000010" href="$sqmath_8cpp.html#aadb30e038879ab02aee3f881974ed8fc" title="Решает линейное уравнение вида bx + c = 0." alt="" coords="355,259,423,285"/>
+<area shape="poly" id="edge12_Node000007_Node000010" title=" " alt="" coords="291,182,363,246,359,250,287,186"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="525,168,561,168,561,173,525,173"/>
+<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="527,206,568,188,570,193,530,211"/>
+<area shape="poly" id="edge14_Node000010_Node000006" title=" " alt="" coords="423,268,473,262,527,244,562,221,590,194,594,198,565,225,529,249,474,267,423,274"/>
+<area shape="poly" id="edge13_Node000010_Node000009" title=" " alt="" coords="419,256,455,239,457,243,421,261"/>
+</map>
