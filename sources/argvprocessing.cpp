@@ -4,7 +4,6 @@
 #include "consts.h"
 #include "argvprocessing.h"
 #include "myassert.h"
-#include "colPrintf.h"
 
 enum valtypes {V_NOTDEF = 0, V_BOOL, V_STRING, V_DOUBLE, V_INT};
 //enum flags {H = 0, HELP, M, C, F};
