@@ -35,30 +35,8 @@ int argvReceive(int argc, char **argv, union fvals *fval)
                     argindex++;
                     if (argindex >= argc)
                         return BAD;
-                    switch(args[flagindex].valtype)
-                    {
-                        case V_BOOL:
-                            if (strcmp("0", argv[argindex]) == 0)
-                                fval[flagindex].bl = 0;
-                            else if (strcmp("1", argv[argindex]) == 0)
-                                fval[flagindex].bl = 1;
-                            else return BAD;
-                            break;
-                        case V_STRING:
-                            strcpy(fval[flagindex].str, argv[argindex]);
-                            break;
-                        case V_DOUBLE:
-                            if (sscanf(argv[argindex], "%lg", &(fval[flagindex].dbl)) != 1)
-                                return BAD;
-                            break;
-                        case V_INT:
-                            if (sscanf(argv[argindex], "%d", &(fval[flagindex].in)) != 1)
-                                return BAD;
-                            break;
-                        default:
-                            return BAD;
-                            break;
-                    }
+                    if(fillFval(argv, argindex, fval, flagindex) == BAD)
+                        return BAD;
                 }
                 break;
             }
@@ -67,6 +45,37 @@ int argvReceive(int argc, char **argv, union fvals *fval)
     }
     return GOOD;
 }
+
+
+int fillFval(char **argv, int argindex, union fvals *fval, int flagindex)
+{
+    switch(args[flagindex].valtype)
+    {
+        case V_BOOL:
+            if (strcmp("0", argv[argindex]) == 0)
+                fval[flagindex].bl = 0;
+            else if (strcmp("1", argv[argindex]) == 0)
+                fval[flagindex].bl = 1;
+            else return BAD;
+            break;
+        case V_STRING:
+            strcpy(fval[flagindex].str, argv[argindex]);
+            break;
+        case V_DOUBLE:
+            if (sscanf(argv[argindex], "%lg", &(fval[flagindex].dbl)) != 1)
+                return BAD;
+            break;
+        case V_INT:
+            if (sscanf(argv[argindex], "%d", &(fval[flagindex].in)) != 1)
+                return BAD;
+            break;
+        default:
+            return BAD;
+            break;
+    }
+    return GOOD;
+}
+
 
 void printHelp()
 {

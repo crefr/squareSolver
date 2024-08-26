@@ -28,10 +28,13 @@ union fvals
 //! @return     Возвращает BAD, если произошла какая-то ошибка, GOOD - если все хорошо (константы, заданы в consts.h)
 int argvReceive(int argc, char **argv, union fvals *fval);
 
-//! @brief Действует в зависимости от значений флагов в fval
-//! @param      [IN]    fval    массив типа union fvals со значениями флагов
-//! @return     Может вернуть EXIT_ (выйти из программы), ERROR_ (ошибка) и 0 (все хорошо)
-int argvHandler(union fvals *fval);
+//! @brief Заполняет значение флага fvals
+//! @param      [IN]    argv        указатель на массив строк argv
+//! @param      [IN]    argindex    индекс аргумента в argv
+//! @param      [OUT]   fval        массив типа union fvals, в который записываются значения флагов
+//! @param      [IN]    flagindex   индекс флага
+//! @return     Возвращает BAD, если произошла какая-то ошибка, GOOD - если все хорошо (константы, заданы в consts.h)
+int fillFval(char **argv, int argindex, union fvals *fval, int flagindex);
 
 //! @brief Выставляет начальные значения массива fval
 //! @param      [OUT]    fval    массив типа union fvals со значениями флагов
