@@ -1,5 +1,0 @@
-<map id="isZero" name="isZero">
-<area shape="rect" id="Node000001" title="Приближенно сравнивает a с 0. Погрешность определяется константой EPSILON." alt="" coords="5,5,63,32"/>
-<area shape="rect" id="Node000002" href="$myisfinite_8cpp.html#afd2bf05e56bb7a125c4fe3587f897deb" title="Буквально isfinite, только мой &#45; если число не NAN, INF, &#45;INF, возвращает 1." alt="" coords="111,5,188,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,16,95,16,95,21,63,21"/>
-</map>

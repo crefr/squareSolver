@@ -1,5 +1,0 @@
-<map id="freadTests" name="freadTests">
-<area shape="rect" id="Node000001" title="Читает тесты из файла fname в массив testp." alt="" coords="5,5,88,32"/>
-<area shape="rect" id="Node000002" href="$col_printf_8cpp.html#ae860d5ee10e4e730f39d929a55709678" title="Если colFlag == 1, текст окрашивается с помощью цветовой строки color, в остальном &#45; обычный printf." alt="" coords="136,5,205,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,16,120,16,120,21,88,21"/>
-</map>

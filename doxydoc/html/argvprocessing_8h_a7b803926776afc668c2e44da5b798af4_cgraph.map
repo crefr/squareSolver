@@ -1,5 +1,0 @@
-<map id="argvReceive" name="argvReceive">
-<area shape="rect" id="Node000001" title="Обрабатывает аргументы командной строки, примеры которых лежат в массиве структур argvEx_t в argvproc..." alt="" coords="5,5,100,32"/>
-<area shape="rect" id="Node000002" href="$argvprocessing_8cpp.html#a739ab2331ecfd04a50b155985e62aa3d" title="Заполняет значение флага fvals." alt="" coords="148,5,207,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,16,132,16,132,21,100,21"/>
-</map>

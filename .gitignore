@@ -5,5 +5,5 @@ a.exe
 .vscode/tasks.json
 a.exe
 tests.o
-doxydoc/latex/
+doxydoc/
 doxydoc/DoxygenLayout.xml

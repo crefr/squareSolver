@@ -1,8 +1,0 @@
-<map id="linSolve" name="linSolve">
-<area shape="rect" id="Node000001" title="Решает линейное уравнение вида bx + c = 0." alt="" coords="5,31,73,57"/>
-<area shape="rect" id="Node000002" href="$sqmath_8cpp.html#a72f9e3f1ac3e22071bdcdd823010b63b" title="Приближенно сравнивает a с 0. Погрешность определяется константой EPSILON." alt="" coords="121,5,178,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,34,104,26,106,31,74,39"/>
-<area shape="rect" id="Node000003" href="$myisfinite_8cpp.html#afd2bf05e56bb7a125c4fe3587f897deb" title="Буквально isfinite, только мой &#45; если число не NAN, INF, &#45;INF, возвращает 1." alt="" coords="226,31,303,57"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="73,41,211,41,211,47,73,47"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="179,22,211,30,210,35,178,28"/>
-</map>
