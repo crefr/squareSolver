@@ -14,9 +14,11 @@ var consts_8h =
       [ "C", "consts_8h.html#ab6b306ef981f5e21bb41ea2c2dbe8cd9a739ce3f516592d245d16fd8a3893472c", null ],
       [ "F", "consts_8h.html#ab6b306ef981f5e21bb41ea2c2dbe8cd9af382a63cc3d6491bf26b59e66f46826d", null ]
     ] ],
+    [ "HEXITS", "consts_8h.html#aecb80480cd121fcd20904e36cd012c28", [
+      [ "ERROR_", "consts_8h.html#aecb80480cd121fcd20904e36cd012c28ab55165ebbaf55b72b3b7b17894ff899d", null ],
+      [ "EXIT_", "consts_8h.html#aecb80480cd121fcd20904e36cd012c28abbc068bf2987230baa506105401cff73", null ]
+    ] ],
     [ "EPSILON", "consts_8h.html#a596344e5a2992d2beec43b76a6294de0", null ],
-    [ "ERROR_", "consts_8h.html#a30d298f2a55d992dceef9d1b37ee2385", null ],
-    [ "EXIT_", "consts_8h.html#a3f37f173462e5105188750609fafaf07", null ],
     [ "INF_ROOTS", "consts_8h.html#a3a8fb162f354ec8bda5558af8f61874d", null ],
     [ "MAXLINE", "consts_8h.html#a4af19d530fc1e1df96478f0d3e2e64d5", null ]
 ];

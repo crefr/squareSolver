@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="sqmath_8cpp.html#a81a063d50a9d1121b1d696f2e0e7e8e7" target="_top" xlink:title="Решает квадратное уравнение вида ax^2 + bx + c = 0. Коэффициенты берет из структуры coeffs_t,...">
+<g id="a_Node000002"><a xlink:href="sqmath_8cpp.html#a62cf47e75fc1f85d1f20dd49098267d3" target="_top" xlink:title="Решает квадратное уравнение вида ax^2 + bx + c = 0. Коэффициенты берет из структуры coeffs_t,...">
 <polygon fill="white" stroke="#666666" points="405.5,-77 354.25,-77 354.25,-57 405.5,-57 405.5,-77"/>
 <text text-anchor="middle" x="379.88" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">sqSolve</text>
 </a>
@@ -56,7 +56,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="tests_8cpp.html#a4dfedd6bea487396641c51297a35d57b" target="_top" xlink:title="Тестирует функцию sqSolve, используя данные из test.">
+<g id="a_Node000004"><a xlink:href="tests_8cpp.html#a34f5261dce77501b22f450100be01a66" target="_top" xlink:title="Тестирует функцию sqSolve, используя данные из test.">
 <polygon fill="white" stroke="#666666" points="318.25,-58 270,-58 270,-38 318.25,-38 318.25,-58"/>
 <text text-anchor="middle" x="294.12" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">runTest</text>
 </a>
@@ -110,7 +110,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="main_8cpp.html#ac52ecffca95f814564c9077d09c4b594" target="_top" xlink:title="Действует в зависимости от значений флагов в fval.">
+<g id="a_Node000006"><a xlink:href="main_8cpp.html#a87969c37f3523e73957ae67d5fa983f4" target="_top" xlink:title="Действует в зависимости от значений флагов в fval.">
 <polygon fill="white" stroke="#666666" points="141.5,-58 73,-58 73,-38 141.5,-38 141.5,-58"/>
 <text text-anchor="middle" x="107.25" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">argvHandler</text>
 </a>

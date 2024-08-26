@@ -20,9 +20,9 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="sqmath_8cpp.html#a4549ae82b726502768498c8469b8143f" target="_top" xlink:title="С погрешностью EPSILON сравнивает корни типа roots_t.">
-<polygon fill="white" stroke="#666666" points="407,-58 354.25,-58 354.25,-38 407,-38 407,-58"/>
-<text text-anchor="middle" x="380.62" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">eqRoots</text>
+<g id="a_Node000002"><a xlink:href="sqmath_8cpp.html#a32aa402e7aab2e7758805135f862bc73" target="_top" xlink:title="С погрешностью EPSILON сравнивает корни типа roots_t.">
+<polygon fill="white" stroke="#666666" points="407,-39 354.25,-39 354.25,-19 407,-19 407,-39"/>
+<text text-anchor="middle" x="380.62" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00">eqRoots</text>
 </a>
 </g>
 </g>
@@ -30,26 +30,17 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M431.58,-36.51C423.51,-38.37 414.98,-40.33 407.3,-42.1"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="432.1,-39.98 441.07,-34.33 430.54,-33.16 432.1,-39.98"/>
+<path fill="none" stroke="#63b8ff" d="M431.3,-29C423.31,-29 414.89,-29 407.3,-29"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="431.03,-32.5 441.03,-29 431.03,-25.5 431.03,-32.5"/>
 </a>
 </g>
 </g>
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="tests_8cpp.html#a4dfedd6bea487396641c51297a35d57b" target="_top" xlink:title="Тестирует функцию sqSolve, используя данные из test.">
+<g id="a_Node000003"><a xlink:href="tests_8cpp.html#a34f5261dce77501b22f450100be01a66" target="_top" xlink:title="Тестирует функцию sqSolve, используя данные из test.">
 <polygon fill="white" stroke="#666666" points="318.25,-39 270,-39 270,-19 318.25,-19 318.25,-39"/>
 <text text-anchor="middle" x="294.12" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00">runTest</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node3 -->
-<g id="edge7_Node000001_Node000003" class="edge">
-<title>Node1&#45;&gt;Node3</title>
-<g id="a_edge7_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M431.47,-29C398.3,-29 347.87,-29 318.54,-29"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="431.32,-32.5 441.32,-29 431.32,-25.5 431.32,-32.5"/>
 </a>
 </g>
 </g>
@@ -57,8 +48,8 @@
 <g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
 <g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M342.84,-39.73C334.57,-37.87 326.02,-35.95 318.48,-34.25"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="341.81,-43.09 352.34,-41.86 343.35,-36.26 341.81,-43.09"/>
+<path fill="none" stroke="#63b8ff" d="M342.56,-29C334.38,-29 325.93,-29 318.48,-29"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="342.3,-32.5 352.3,-29 342.3,-25.5 342.3,-32.5"/>
 </a>
 </g>
 </g>
@@ -101,7 +92,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="main_8cpp.html#ac52ecffca95f814564c9077d09c4b594" target="_top" xlink:title="Действует в зависимости от значений флагов в fval.">
+<g id="a_Node000005"><a xlink:href="main_8cpp.html#a87969c37f3523e73957ae67d5fa983f4" target="_top" xlink:title="Действует в зависимости от значений флагов в fval.">
 <polygon fill="white" stroke="#666666" points="141.5,-58 73,-58 73,-38 141.5,-38 141.5,-58"/>
 <text text-anchor="middle" x="107.25" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">argvHandler</text>
 </a>

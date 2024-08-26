@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SquareSolver: Файл sources/argvprocessing.cpp</title>
+<title>SquareSolver: Файл D:/Cprojects/square_solver_git/squareSolver/sources/argvprocessing.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -109,14 +109,14 @@ $(function(){initNavTree('argvprocessing_8cpp.html',''); initResizable(true); })
 </div><div class="textblock"><div class="dynheader">
 Граф включаемых заголовочных файлов для argvprocessing.cpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="argvprocessing_8cpp__incl.svg" width="667" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="argvprocessing_8cpp__incl.svg" width="667" height="219"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Функции</h2></td></tr>
-<tr class="memitem:a7b803926776afc668c2e44da5b798af4" id="r_a7b803926776afc668c2e44da5b798af4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b803926776afc668c2e44da5b798af4">argvReceive</a> (int argc, char **argv, union <a class="el" href="unionfvals.html">fvals</a> *fval)</td></tr>
-<tr class="memdesc:a7b803926776afc668c2e44da5b798af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает аргументы командной строки, примеры которых лежат в массиве структур <a class="el" href="structargv_ex__t.html" title="Структура, хранящая данные о флаге командной строки">argvEx_t</a> в <a class="el" href="argvprocessing_8cpp.html">argvprocessing.cpp</a>, заполняет массив fval значениями флагов  <br /></td></tr>
-<tr class="separator:a7b803926776afc668c2e44da5b798af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a874bd6700508cd66afd2d8143adeaf39" id="r_a874bd6700508cd66afd2d8143adeaf39"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a874bd6700508cd66afd2d8143adeaf39">argvReceive</a> (const int argc, char **argv, union <a class="el" href="unionfvals.html">fvals</a> *fval)</td></tr>
+<tr class="memdesc:a874bd6700508cd66afd2d8143adeaf39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает аргументы командной строки, примеры которых лежат в массиве структур <a class="el" href="structargv_ex__t.html" title="Структура, хранящая данные о флаге командной строки">argvEx_t</a> в <a class="el" href="argvprocessing_8cpp.html">argvprocessing.cpp</a>, заполняет массив fval значениями флагов  <br /></td></tr>
+<tr class="separator:a874bd6700508cd66afd2d8143adeaf39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a739ab2331ecfd04a50b155985e62aa3d" id="r_a739ab2331ecfd04a50b155985e62aa3d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a739ab2331ecfd04a50b155985e62aa3d">fillFval</a> (char **argv, const int argindex, union <a class="el" href="unionfvals.html">fvals</a> *fval, const int flagindex)</td></tr>
 <tr class="memdesc:a739ab2331ecfd04a50b155985e62aa3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполняет значение флага fvals.  <br /></td></tr>
 <tr class="separator:a739ab2331ecfd04a50b155985e62aa3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,8 +128,8 @@ $(function(){initNavTree('argvprocessing_8cpp.html',''); initResizable(true); })
 <tr class="separator:a0c0b64e31d7a439350b7a29ba42e0886"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Функции</h2>
-<a id="a7b803926776afc668c2e44da5b798af4" name="a7b803926776afc668c2e44da5b798af4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b803926776afc668c2e44da5b798af4">&#9670;&#160;</a></span>argvReceive()</h2>
+<a id="a874bd6700508cd66afd2d8143adeaf39" name="a874bd6700508cd66afd2d8143adeaf39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a874bd6700508cd66afd2d8143adeaf39">&#9670;&#160;</a></span>argvReceive()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,7 +137,7 @@ $(function(){initNavTree('argvprocessing_8cpp.html',''); initResizable(true); })
         <tr>
           <td class="memname">int argvReceive </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em></span>, </td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>argc</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -165,12 +165,12 @@ $(function(){initNavTree('argvprocessing_8cpp.html',''); initResizable(true); })
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="argvprocessing_8cpp_a7b803926776afc668c2e44da5b798af4_cgraph.svg" width="212" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="argvprocessing_8cpp_a874bd6700508cd66afd2d8143adeaf39_cgraph.svg" width="212" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="argvprocessing_8cpp_a7b803926776afc668c2e44da5b798af4_icgraph.svg" width="203" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="argvprocessing_8cpp_a874bd6700508cd66afd2d8143adeaf39_icgraph.svg" width="203" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

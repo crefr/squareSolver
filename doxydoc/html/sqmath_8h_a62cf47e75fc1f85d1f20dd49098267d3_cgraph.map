@@ -1,0 +1,15 @@
+<map id="sqSolve" name="sqSolve">
+<area shape="rect" id="Node000001" title="Решает квадратное уравнение вида ax^2 + bx + c = 0. Коэффициенты берет из структуры coeffs_t,..." alt="" coords="5,81,74,108"/>
+<area shape="rect" id="Node000002" href="$sqmath_8cpp.html#a99cf170491e6e4c4facc3321b9efeb22" title="Считает дискриминант, используя коэффициенты из структуры типа coeffs_t." alt="" coords="241,5,290,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,78,121,48,175,32,225,22,226,27,176,37,123,53,64,83"/>
+<area shape="rect" id="Node000003" href="$myisfinite_8cpp.html#afd2bf05e56bb7a125c4fe3587f897deb" title="Буквально isfinite, только мой &#45; если число не NAN, INF, &#45;INF, возвращает 1." alt="" coords="342,81,420,108"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="74,89,122,87,231,86,327,89,327,95,231,92,122,92,74,95"/>
+<area shape="rect" id="Node000004" href="$sqmath_8cpp.html#a72f9e3f1ac3e22071bdcdd823010b63b" title="Приближенно сравнивает a с 0. Погрешность определяется константой EPSILON." alt="" coords="237,107,294,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="75,96,222,112,221,118,74,101"/>
+<area shape="rect" id="Node000005" href="$sqmath_8cpp.html#aadb30e038879ab02aee3f881974ed8fc" title="Решает линейное уравнение вида bx + c = 0." alt="" coords="122,157,189,184"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="63,106,122,146,119,151,60,111"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="289,30,348,70,345,75,286,35"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="294,111,326,104,328,109,295,116"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="189,165,239,158,293,143,347,115,349,119,295,148,240,163,190,171"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="185,154,222,137,224,142,187,159"/>
+</map>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SquareSolver: Файл headers/myassert.h</title>
+<title>SquareSolver: Файл D:/Cprojects/square_solver_git/squareSolver/headers/myassert.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,12 +107,12 @@ $(function(){initNavTree('myassert_8h.html',''); initResizable(true); });
 </div><div class="textblock"><div class="dynheader">
 Граф включаемых заголовочных файлов для myassert.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="myassert_8h__incl.svg" width="270" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="myassert_8h__incl.svg" width="270" height="144"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 Граф файлов, в которые включается этот файл:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="myassert_8h__dep__incl.svg" width="998" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="myassert_8h__dep__incl.svg" width="1139" height="176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="myassert_8h_source.html">См. исходные тексты.</a></p>
@@ -139,14 +139,14 @@ $(function(){initNavTree('myassert_8h.html',''); initResizable(true); });
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Макроопределение:</b><div class="fragment"><div class="line">            <span class="keywordflow">do</span>{                                                                                                     \</div>
-<div class="line">                if (!(arg))                                                                                         \</div>
-<div class="line">                {                                                                                                   \</div>
-<div class="line">                    colPrintf(<a class="code hl_define" href="colors_8h.html#a8d23feea868a983c8c2b661e1e16972f">RED</a>, <span class="stringliteral">&quot;\tMYASSERT #%d: ERROR in file: %s, function %s(), line %d\n \t&gt;&gt;&gt; &quot;</span> #arg  <span class="stringliteral">&quot;\n&quot;</span>, \</div>
-<div class="line">                                __COUNTER__ + 1, __FILE__, __FUNCTION__, __LINE__);                                 \</div>
-<div class="line">                    exit(1);                                                                                        \</div>
-<div class="line">                }                                                                                                   \</div>
-<div class="line">            } <span class="keywordflow">while</span>(0)</div>
+<b>Макроопределение:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>{                                                                                                     \</div>
+<div class="line">        if (!(arg))                                                                                         \</div>
+<div class="line">        {                                                                                                   \</div>
+<div class="line">            colPrintf(<a class="code hl_define" href="colors_8h.html#a8d23feea868a983c8c2b661e1e16972f">RED</a>, <span class="stringliteral">&quot;\tMYASSERT #%d: ERROR in file: %s, function %s(), line %d\n \t&gt;&gt;&gt; &quot;</span> #arg  <span class="stringliteral">&quot;\n&quot;</span>, \</div>
+<div class="line">                        __COUNTER__ + 1, __FILE__, __FUNCTION__, __LINE__);                                 \</div>
+<div class="line">            exit(1);                                                                                        \</div>
+<div class="line">        }                                                                                                   \</div>
+<div class="line">    } <span class="keywordflow">while</span>(0)</div>
 <div class="ttc" id="acolors_8h_html_a8d23feea868a983c8c2b661e1e16972f"><div class="ttname"><a href="colors_8h.html#a8d23feea868a983c8c2b661e1e16972f">RED</a></div><div class="ttdeci">#define RED</div><div class="ttdef"><b>Definition</b> colors.h:7</div></div>
 </div><!-- fragment -->
 <p>При ложности arg рубит программу, выдавая <br  />

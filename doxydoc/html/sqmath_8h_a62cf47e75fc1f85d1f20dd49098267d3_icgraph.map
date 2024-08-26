@@ -1,0 +1,14 @@
+<map id="sqSolve" name="sqSolve">
+<area shape="rect" id="Node000001" title="Решает квадратное уравнение вида ax^2 + bx + c = 0. Коэффициенты берет из структуры coeffs_t,..." alt="" coords="478,5,546,32"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="462,21,55,21,55,16,462,16"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html#a34f5261dce77501b22f450100be01a66" title="Тестирует функцию sqSolve, используя данные из test." alt="" coords="365,31,430,57"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="463,32,431,40,429,34,462,27"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp.html#af69c2591503f36d530dd5912015e849c" title="Запускает тесты из файла с именем fname, использует freadTests() и runTest()" alt="" coords="242,31,317,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="350,47,318,47,318,41,350,41"/>
+<area shape="rect" id="Node000006" href="$tests_8cpp.html#a2dcdccc8a8ededb7804d00ba921edb73" title="(Устаревшее) Выполняет тесты из внутреннего массива типа struct test_t" alt="" coords="244,81,315,108"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="352,66,314,83,311,78,350,62"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a87969c37f3523e73957ae67d5fa983f4" title="Действует в зависимости от значений флагов в fval." alt="" coords="103,31,194,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="226,47,194,47,194,41,226,41"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="87,34,54,26,55,21,88,28"/>
+</map>

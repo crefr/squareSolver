@@ -1,21 +1,21 @@
-<map id="sources/printscan.cpp" name="sources/printscan.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="249,5,398,32"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,66,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="270,35,81,82,80,77,269,30"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="90,80,154,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="289,35,170,78,168,73,288,30"/>
-<area shape="rect" id="Node000004" href="$printscan_8h.html" title=" " alt="" coords="178,80,264,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="307,35,253,73,250,68,304,30"/>
-<area shape="rect" id="Node000005" href="$consts_8h.html" title=" " alt="" coords="288,80,359,107"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="326,33,326,64,321,64,321,33"/>
-<area shape="rect" id="Node000006" href="$col_printf_8h.html" title=" " alt="" coords="341,155,421,181"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="339,31,358,52,374,79,382,110,384,139,379,140,377,111,369,81,353,55,335,34"/>
-<area shape="rect" id="Node000007" href="$colors_8h.html" title=" " alt="" coords="532,155,600,181"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="399,23,433,30,469,40,503,56,533,78,554,107,564,138,559,140,549,109,530,82,500,61,467,45,432,35,398,28"/>
-<area shape="rect" id="Node000008" href="$myassert_8h.html" title=" " alt="" coords="434,80,520,107"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="351,30,437,70,435,75,349,35"/>
-<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="462,109,411,147,408,143,459,105"/>
-<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="494,105,541,143,537,147,491,109"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="445,155,508,181"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="480,107,480,139,474,139,474,107"/>
+<map id="D:/Cprojects/square_solver_git/squareSolver/sources/printscan.cpp" name="D:/Cprojects/square_solver_git/squareSolver/sources/printscan.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="241,5,406,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,112,66,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,64,81,113,79,108,240,59"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="90,112,154,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="259,67,166,108,163,103,257,62"/>
+<area shape="rect" id="Node000004" href="$printscan_8h.html" title=" " alt="" coords="178,112,264,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="292,66,249,104,245,99,289,62"/>
+<area shape="rect" id="Node000005" href="$consts_8h.html" title=" " alt="" coords="288,112,359,139"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="326,64,326,96,321,96,321,64"/>
+<area shape="rect" id="Node000006" href="$col_printf_8h.html" title=" " alt="" coords="341,187,421,213"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="348,63,362,86,374,111,381,142,384,171,378,171,376,143,369,113,358,88,344,66"/>
+<area shape="rect" id="Node000007" href="$colors_8h.html" title=" " alt="" coords="532,187,600,213"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="407,47,473,70,505,88,533,110,553,139,564,171,559,172,548,142,530,114,502,92,471,75,405,52"/>
+<area shape="rect" id="Node000008" href="$myassert_8h.html" title=" " alt="" coords="434,112,520,139"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="375,62,443,102,441,106,372,67"/>
+<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="462,141,411,179,408,175,459,137"/>
+<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="494,137,541,175,537,179,491,141"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="445,187,508,213"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="480,139,480,171,474,171,474,139"/>
 </map>
