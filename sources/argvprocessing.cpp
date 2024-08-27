@@ -2,7 +2,7 @@
 #include <string.h>
 
 #include "consts.h"
-#include "../headers/argvprocessing.h"
+#include "argvprocessing.h"
 #include "myassert.h"
 
 int argvReceive(const int argc, char **argv, union fvals *fval)

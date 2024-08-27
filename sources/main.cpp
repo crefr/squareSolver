@@ -17,7 +17,7 @@
 
 //! @brief Действует в зависимости от значений флагов в fval
 //! @param      [IN]    fval    массив типа union fvals со значениями флагов
-//! @return     Может вернуть EXIT_ (выйти из программы), ERROR_ (ошибка) и 0 (все хорошо)
+//! @return     Может вернуть EXIT (выйти из программы), BAD (ошибка) и GOOD (все хорошо)
 int argvHandler(const union fvals *fval);
 
 int main(int argc, char *argv[])
