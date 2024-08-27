@@ -15,7 +15,7 @@ void sqSolve(const struct coeffs_t coef, struct roots_t *root)
 
     root -> x1 = 0;
     root -> x2 = 0;
-    root -> nRoots = -2;
+    root -> nRoots = NOTDEFINED;
 
     if (isZero(coef.a))
     {

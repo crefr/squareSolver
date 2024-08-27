@@ -1,3 +1,4 @@
+//! @file
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -13,7 +14,6 @@
 #include "colPrintf.h"
 #include "myassert.h"
 #include "argvprocessing.h"
-
 
 //! @brief Действует в зависимости от значений флагов в fval
 //! @param      [IN]    fval    массив типа union fvals со значениями флагов

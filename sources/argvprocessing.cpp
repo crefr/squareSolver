@@ -5,18 +5,6 @@
 #include "../headers/argvprocessing.h"
 #include "myassert.h"
 
-
-//enum flags {H = 0, HELP, M, C, F};
-// static const struct argvEx_t args[] =
-// {
-//     {.valtype = V_NOTDEF,       .fname = "-h",          .help = "standard --help"},
-//     {.valtype = V_NOTDEF,       .fname = "--help",      .help = "standard --help"},
-//     {.valtype = V_BOOL,         .fname = "-m",          .help = "switches mode to 0 or 1 (-m 0 and -m 1)"},
-//     {.valtype = V_BOOL,         .fname = "-c",          .help = "switches color mode to 0 or 1 (-c 0 and -c 1)"},
-//     {.valtype = V_STRING,       .fname = "-f",          .help = "an argument after -f will be the name of file with tests (ex. -f tests.txt) (tests.txt on default)"}
-// };
-// static const int ARGVNUM = sizeof(args) / sizeof(argvEx_t);
-
 int argvReceive(const int argc, char **argv, union fvals *fval)
 {
     MYASSERT(argv != NULL);

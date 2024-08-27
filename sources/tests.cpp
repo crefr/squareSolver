@@ -9,7 +9,6 @@
 #include "colors.h"
 #include "myassert.h"
 
-
 int runTest(const struct test_t test)
 {
     struct roots_t root = {};

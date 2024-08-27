@@ -4,6 +4,7 @@
 
 const int INF_ROOTS = -1;
 const double EPSILON = 1e-5;
+const int NOTDEFINED = -2;
 
 enum HEXITS {ERROR_ = -10, EXIT_};
 enum EXITS {BAD = 0, GOOD, EXIT};
